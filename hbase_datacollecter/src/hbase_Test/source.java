@@ -127,20 +127,48 @@ public class source {
 				System.out.println("insert data success");
 				
 				//authors going to working 20160405--
-				//crdb.getNum(paper.eachAuthor(),0);//Integer/ArrayList
-				
+				ArrayList<String> keywords = new ArrayList<String>();//get minsoo's ontology
+				keywords.add(keyword);
+				keywords.add("db");
+				ArrayList<Integer> temp_author = crdb.getNum(paper.eachAuthor(),0);//Integer/ArrayList
+				ArrayList<Integer> temp_keyword =crdb.getNum(keywords, 1);
 				//FIX ME insertExpertInfo
-
+				 System.out.println("paper.Author().size() : "+paper.author.size());
+				 //System.out.println("paper.eachAuthor().size() : "+paper.eachAuthor().size());
+				System.out.println("temp_author");
+				for(int p:temp_author){
+					
+					System.out.println(p);
+					
+				}
+				System.out.println("temp_keyword");
+				for(int p:temp_keyword){
+					
+					System.out.println(p);
+					
+				}
 				
 				//first author insert main Author
 				// create RDB 
-				cht.insertExpertInfo(paper.eachAuthor().get(i) + keyword+timestamp(),paper.linkURL,"1");
-				for (int o = 1; i < paper.author.size(); o++) {
-					
-					cht.insertExpertInfo(crdb.getNum(paper.eachAuthor(),0).get(i)+"_" + crdb.getNum(crdb.paper_keyword, 0).get(0)+"_"+timestamp(),paper.linkURL,"0");// Author_classify
-
-				}
 				
+				
+				for(int q=0;q<temp_keyword.size();q++){
+					
+					for (int o = 0; o < temp_author.size(); o++) {
+						if(o==0){
+							cht.insertExpertInfo(temp_author.get(o)+"_"+ temp_keyword.get(q)+"_"+timestamp(),paper.linkURL,"1");			
+							
+						}else{
+							cht.insertExpertInfo(temp_author.get(o)+"_" +temp_keyword.get(q)+"_"+timestamp(),paper.linkURL,"0");// Author_classify							
+						}
+						
+
+
+					}
+	
+					
+				}
+								
 /*
 				for (int o = 1; i < paper.author.size(); o++) {
 						for(int k=0;k<paper.paper_keyword.size();k++){

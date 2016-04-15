@@ -16,7 +16,7 @@ public class ConnectRDB {
 	Statement st = null;
 	ResultSet rs = null;
 	
-	String url = "jdbc:postgresql://203.255.77.147/expertdb";
+	String url = "jdbc:postgresql://203.255.77.173/expertdb";
 	String user = "expert";
 	String password = "netdb3230";
 	public ArrayList<String> paper_keyword;
