@@ -126,7 +126,7 @@ public class ConnectRDB {
 			ex.printStackTrace();
 		}
 	}
-	
+	/*
 	public static void main(String[] args) {
 		ConnectRDB ps = new ConnectRDB();
 		ArrayList<String> authors = new ArrayList<>();
@@ -148,5 +148,5 @@ public class ConnectRDB {
 		
 		
 	}
-
+*/
 }

@@ -2,6 +2,6 @@ package hbase_Test;
 
 public class Author {
 	String order="";
-	String name="";
+	public String name="";
 	String url="null";
 }

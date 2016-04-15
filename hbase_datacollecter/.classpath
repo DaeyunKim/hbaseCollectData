@@ -112,5 +112,6 @@
 	<classpathentry kind="lib" path="/home/kdy/Downloads/hbase-0.98.4-hadoop2/lib/xmlenc-0.52.jar"/>
 	<classpathentry kind="lib" path="/home/kdy/Downloads/hbase-0.98.4-hadoop2/lib/xz-1.0.jar"/>
 	<classpathentry kind="lib" path="/home/kdy/Downloads/hbase-0.98.4-hadoop2/lib/zookeeper-3.4.6.jar"/>
+	<classpathentry kind="lib" path="/home/kdy/Downloads/postgresql-9.4.1207.jre6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

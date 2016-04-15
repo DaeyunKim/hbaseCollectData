@@ -6,7 +6,7 @@ public class paperInfo {
 
 	String category=""; //카테고리
 	String title=""; //제목
-	ArrayList<Author> author = new ArrayList<Author>();//저자정보
+	public ArrayList<Author> author = new ArrayList<Author>();//저자정보
 	
 	String publisher_url="null"; // 학회 정보 url
 	String publisher_name="null"; // 학회 이름

@@ -78,8 +78,9 @@ public class source {
 			}
 			
 		}
+		
 		cht.exeFlushcommit();
-
+		crdb.close();
 	}
 
 	public void getDocument(InputStream str, URL url) throws ParserConfigurationException, IOException, SAXException {
@@ -132,12 +133,14 @@ public class source {
 
 				
 				//first author insert main Author
+				// create RDB 
 				cht.insertExpertInfo(paper.eachAuthor().get(i) + keyword+timestamp(),paper.linkURL,"1");
 				for (int o = 1; i < paper.author.size(); o++) {
 					
 					cht.insertExpertInfo(crdb.getNum(paper.eachAuthor(),0).get(i)+"_" + crdb.getNum(crdb.paper_keyword, 0).get(0)+"_"+timestamp(),paper.linkURL,"0");// Author_classify
 
 				}
+				
 /*
 				for (int o = 1; i < paper.author.size(); o++) {
 						for(int k=0;k<paper.paper_keyword.size();k++){
@@ -152,6 +155,8 @@ public class source {
 				//FIX ME PS
 				//FIX ME citationInfo
 				//FIX ME relationInfo
+				cht.insertCountRelation(paper);
+				
 				//FIX ME count keyword, count paper
 				
 				
@@ -163,6 +168,10 @@ public class source {
 				// 이부분 인용수
 			//	cht.insertPaperCitationInfo(paper.linkURL, "nCitation", "Citation_year");
 
+				
+				
+				
+				
 			}
 
 			System.out.println("Author Size: " + paper.author.size());

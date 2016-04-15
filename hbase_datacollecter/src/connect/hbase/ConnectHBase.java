@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -11,16 +12,20 @@ import org.apache.hadoop.hbase.HColumnDescriptor;
 import org.apache.hadoop.hbase.HTableDescriptor;
 import org.apache.hadoop.hbase.MasterNotRunningException;
 import org.apache.hadoop.hbase.ZooKeeperConnectionException;
+import org.apache.hadoop.hbase.client.Get;
 import org.apache.hadoop.hbase.client.HBaseAdmin;
 import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.RetriesExhaustedWithDetailsException;
 import org.apache.hadoop.hbase.util.Bytes;
 
+import hbase_Test.paperInfo;
+
 public class ConnectHBase {
-	private static Configuration conf=null;
+	private static Configuration conf = null;
 	private static HBaseAdmin admin;
-	public static HTable table=null, table1, table2, table3, table4, table5;
+	public static HTable table = null, table1, table2, table3, table4, table5, table6;
 
 	public ConnectHBase() throws IOException {
 		mkconfig();
@@ -54,24 +59,42 @@ public class ConnectHBase {
 			e.printStackTrace();
 		}
 	}
-	public void setHTable() throws IOException{
+
+	public void setHTable() throws IOException {
 		table.setAutoFlush(false);
-		table.setWriteBufferSize(1024*1024*12);
+		table.setWriteBufferSize(1024 * 1024 * 12);
 		table1.setAutoFlush(false);
-		table1.setWriteBufferSize(1024*1024*12);
+		table1.setWriteBufferSize(1024 * 1024 * 12);
+		table2.setAutoFlush(false);
+		table2.setWriteBufferSize(1024 * 1024 * 12);
+		table3.setAutoFlush(false);
+		table3.setWriteBufferSize(1024 * 1024 * 12);
+		table4.setAutoFlush(false);
+		table4.setWriteBufferSize(1024 * 1024 * 12);
+		table5.setAutoFlush(false);
+		table5.setWriteBufferSize(1024 * 1024 * 12);
+		table6.setAutoFlush(false);
+		table6.setWriteBufferSize(1024 * 1024 * 12);
+		
 	};
-	
-	public void exeFlushcommit() throws RetriesExhaustedWithDetailsException, InterruptedIOException{
+
+	public void exeFlushcommit() throws RetriesExhaustedWithDetailsException, InterruptedIOException {
 		table.flushCommits();
 		table1.flushCommits();
+		table2.flushCommits();
+		table3.flushCommits();
+		table4.flushCommits();
+		table5.flushCommits();
+		table6.flushCommits();
 		
+
 	}
+
 	public static void createTable() throws IOException {
 		System.out.println("create table");
-	
-		
+
 		if (!admin.isTableAvailable("T_TABLE_INFO")) {
-			
+
 			HTableDescriptor H_T_TABLE = new HTableDescriptor("T_TABLE_INFO");
 			H_T_TABLE.addFamily(new HColumnDescriptor("paper_info"));
 			H_T_TABLE.addFamily(new HColumnDescriptor("issue_info"));
@@ -80,11 +103,10 @@ public class ConnectHBase {
 			admin.createTable(H_T_TABLE);
 			table = new HTable(conf, "T_TABLE_INFO");
 			System.out.println("----------creat table number! : ------------");
-		}else{
+		} else {
 			table = new HTable(conf, "T_TABLE_INFO");
 			System.out.println("----------exist table number! : ------------");
-			
-			
+
 		}
 
 		if (!admin.isTableAvailable("T_EXPERT_INFO")) {
@@ -93,6 +115,10 @@ public class ConnectHBase {
 			admin.createTable(H_T_EXPERT_INFO);
 			table1 = new HTable(conf, "T_EXPERT_INFO");
 			System.out.println("Auto flush: " + table1.isAutoFlush());
+		} else {
+			table1 = new HTable(conf, "T_EXPERT_INFO");
+			System.out.println("----------exist table number! : ------------");
+
 		}
 
 		if (!admin.isTableAvailable("T_KEYWORD_INFO")) {
@@ -101,6 +127,10 @@ public class ConnectHBase {
 			admin.createTable(H_T_KEYWORD_INFO);
 			table2 = new HTable(conf, "T_KEYWORD_INFO");
 			System.out.println("Auto flush: " + table2.isAutoFlush());
+		}else {
+			table2 = new HTable(conf, "T_KEYWORD_INFO");
+			System.out.println("----------exist table number! : ------------");
+
 		}
 
 		if (!admin.isTableAvailable("T_KCIIF_INFO")) {
@@ -108,6 +138,10 @@ public class ConnectHBase {
 			H_T_KCIIF_INFO.addFamily(new HColumnDescriptor("Impact_factor"));
 			admin.createTable(H_T_KCIIF_INFO);
 			table4 = new HTable(conf, "T_KCIIF_INFO");
+		}else {
+			table4 = new HTable(conf, "T_KCIIF_INFO");
+			System.out.println("----------exist table number! : ------------");
+
 		}
 
 		if (!admin.isTableAvailable("MT_P_SCORE")) {
@@ -115,6 +149,20 @@ public class ConnectHBase {
 			H_MT_P_SCORE.addFamily(new HColumnDescriptor("pscore"));
 			admin.createTable(H_MT_P_SCORE);
 			table5 = new HTable(conf, "MT_P_SCORE");
+		}else {
+			table5 = new HTable(conf, "MT_P_SCORE");
+			System.out.println("----------exist table number! : ------------");
+
+		}
+		if (!admin.isTableAvailable("T_RELATION_INFO")) {
+			HTableDescriptor H_MT_P_SCORE = new HTableDescriptor("T_RELATION_INFO");
+			H_MT_P_SCORE.addFamily(new HColumnDescriptor("cf1"));
+			admin.createTable(H_MT_P_SCORE);
+			table6 = new HTable(conf, "T_RELATION_INFO");
+		}else {
+			table6 = new HTable(conf, "T_RELATION_INFO");
+			System.out.println("----------exist table number! : ------------");
+
 		}
 
 		if (!admin.isTableAvailable("T_PAPER_CITATION_INFO")) {
@@ -123,14 +171,20 @@ public class ConnectHBase {
 			admin.createTable(H_T_PAPER_CITATION_INFO);
 			table3 = new HTable(conf, "T_PAPER_CITATION_INFO");
 			System.out.println("Auto flush: " + table2.isAutoFlush());
+		}else {
+			table3 = new HTable(conf, "T_PAPER_CITATION_INFO");
+			System.out.println("----------exist table number! : ------------");
+
 		}
 	}
 
-	public void insertPaperInfo(String url, String title, String nAuthor, String Author_names,
-			String issue_number, String issue_date, String issue_name, String publisher_name, String authorURL,
-			String paperURL, String publisherURL, String keyword) throws IOException {
-	//	System.out.println(title + '*' + nAuthor + '*' + Author_names + '*' + issue_number + '*' + issue_date + '*'
-				//+ issue_name + '*' + publisher_name + '*' + authorURL+'*'+paperURL+'*'+publisherURL+'*'+keyword);
+	public void insertPaperInfo(String url, String title, String nAuthor, String Author_names, String issue_number,
+			String issue_date, String issue_name, String publisher_name, String authorURL, String paperURL,
+			String publisherURL, String keyword) throws IOException {
+		// System.out.println(title + '*' + nAuthor + '*' + Author_names + '*' +
+		// issue_number + '*' + issue_date + '*'
+		// + issue_name + '*' + publisher_name + '*' +
+		// authorURL+'*'+paperURL+'*'+publisherURL+'*'+keyword);
 		Put put = new Put(Bytes.toBytes(transMD5(title + url)));
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("title"), Bytes.toBytes(title));
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("nAuthor"), Bytes.toBytes(nAuthor));
@@ -143,21 +197,23 @@ public class ConnectHBase {
 		put.add(Bytes.toBytes("url"), Bytes.toBytes("paperURL"), Bytes.toBytes(paperURL));
 		put.add(Bytes.toBytes("url"), Bytes.toBytes("publisherURL"), Bytes.toBytes(publisherURL));
 		put.add(Bytes.toBytes("keyword"), Bytes.toBytes("keywords"), Bytes.toBytes(keyword));
-		
 
 		table.put(put);
-		
+
 	}
 
-	public void insertExpertInfo(String nameKeyword, String paperId, String AuthorClassify) throws RetriesExhaustedWithDetailsException, InterruptedIOException {
+	public void insertExpertInfo(String nameKeyword, String paperId, String AuthorClassify)
+			throws RetriesExhaustedWithDetailsException, InterruptedIOException {
 
-//		cht.insertExpertInfo(crdb.getNum(paper.eachAuthor(),0).get(i) + crdb.getNum(crdb.paper_keyword, 0).get(0)+timestamp(),paper.linkURL,"0");// Author_classify
+		// cht.insertExpertInfo(crdb.getNum(paper.eachAuthor(),0).get(i) +
+		// crdb.getNum(crdb.paper_keyword,
+		// 0).get(0)+timestamp(),paper.linkURL,"0");// Author_classify
 		Put put = new Put(Bytes.toBytes(transMD5(nameKeyword)));
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("title"), Bytes.toBytes(paperId));
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("nAuthor"), Bytes.toBytes(AuthorClassify));
-		
+
 		table1.put(put);
-		
+
 	}
 
 	public void insertKeywordInfo(String keyword, String paperId) {
@@ -175,29 +231,69 @@ public class ConnectHBase {
 	public void insertPScore(String paperId, String score) {
 
 	}
-	
-	
-	public String transMD5(String str){
-		
-		
-		String MD5 = ""; 
-		try{
-			MessageDigest md = MessageDigest.getInstance("MD5"); 
-			md.update(str.getBytes()); 
-			byte byteData[] = md.digest();
-			StringBuffer sb = new StringBuffer(); 
-			for(int i = 0 ; i < byteData.length ; i++){
-				sb.append(Integer.toString((byteData[i]&0xff) + 0x100, 16).substring(1));
-			}
-			MD5 = sb.toString();
-			
-			System.out.println(MD5);
-		}catch(NoSuchAlgorithmException e){
-			e.printStackTrace(); 
-			MD5 = null; 
+
+	public void insertCountRelation(paperInfo pi) throws IOException {
+System.out.println("insert relation author info ");
+		int cnt = 0;
+		Result result = null;
+		ArrayList<String> name = new ArrayList<String>();
+
+		for (int i = 0; i < pi.author.size(); i++) {
+			name.add(i, pi.author.get(i).name);
+			System.out.println("name : "+pi.author.get(i).name);
 		}
 		
+		for (int i = 0; i < pi.author.size(); i++) {
+
+			String strTemp = pi.author.get(i).name;
+			Put put = new Put(Bytes.toBytes(strTemp));
+			Get get = new Get(Bytes.toBytes(name.get(i)));
+			for (int j = 0; j < pi.author.size(); j++) {
+				if (i != j) {
+					get.addColumn(Bytes.toBytes("cf1"), Bytes.toBytes(name.get(j)));
+				}
+			}
+
+			result = table6.get(get);
+
+			for (int j = 0; j < pi.author.size(); j++) {
+				if (i != j) {
+					try {
+						cnt = Bytes.toInt(result.getValue(Bytes.toBytes("cf1"), Bytes.toBytes(name.get(j))));
+						cnt++;
+					} catch (Exception e) {
+						cnt = 0;
+					}
+					if (cnt == 0)
+						cnt = 1;
+					put.add(Bytes.toBytes("cf1"), Bytes.toBytes(name.get(j)), Bytes.toBytes(cnt));
+					table6.put(put);
+
+				}
+			}
+		}
+	}
+
+	public String transMD5(String str) {
+
+		String MD5 = "";
+		try {
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			md.update(str.getBytes());
+			byte byteData[] = md.digest();
+			StringBuffer sb = new StringBuffer();
+			for (int i = 0; i < byteData.length; i++) {
+				sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+			}
+			MD5 = sb.toString();
+
+			System.out.println(MD5);
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+			MD5 = null;
+		}
+
 		return MD5;
-		
+
 	}
 }
