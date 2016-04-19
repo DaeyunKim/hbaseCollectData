@@ -197,15 +197,17 @@ public class source {
 				// 입력받아야됨
 			//	cht.insertKCIIF(paper.publisher_name, "score");
 			//	cht.insertPScore("paper.linkURL", "score");
-				System.out.println("paper.Issue_date : "+paper.Issue_date);
+				
+				//calculate P_SCORE
+				//System.out.println("paper.Issue_date : "+paper.Issue_date);
 				String hyear = paper.Issue_date.substring(0,3);
 				Integer.parseInt(hyear);//paper Year
 				int n_diff = today_year-Integer.parseInt(hyear);
 				//currentYear
 				 
 				
-				//int score = 1/Math.log()) ;
-				//cht.insertPScore( paper.linkURL,);
+				float score = (float) (1/(Math.log(n_diff))) ;
+				cht.insertPScore(paper.linkURL,score);
 				
 				// 이부분 인용수
 			//	cht.insertPaperCitationInfo(paper.linkURL, "nCitation", "Citation_year");

@@ -239,10 +239,13 @@ public class ConnectHBase {
 
 	}
 
-	public void insertPScore(String paperId, String score) {
+	public void insertPScore(String paperId, float score) throws RetriesExhaustedWithDetailsException, InterruptedIOException {
 
-		
-		
+		Put put = new Put(Bytes.toBytes(transMD5(paperId)));
+
+		put.add(Bytes.toBytes("pscroe"), Bytes.toBytes("score"), Bytes.toBytes(score));
+
+		table5.put(put);
 		
 	}
 
