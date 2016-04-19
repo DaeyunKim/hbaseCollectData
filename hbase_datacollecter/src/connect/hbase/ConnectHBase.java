@@ -95,18 +95,18 @@ public class ConnectHBase {
 	public static void createTable() throws IOException {
 		System.out.println("create table");
 
-		if (!admin.isTableAvailable("T_TABLE_INFO")) {
+		if (!admin.isTableAvailable("T_PAPER_INFO")) {
 
-			HTableDescriptor H_T_TABLE = new HTableDescriptor("T_TABLE_INFO");
+			HTableDescriptor H_T_TABLE = new HTableDescriptor("T_PAPER_INFO");
 			H_T_TABLE.addFamily(new HColumnDescriptor("paper_info"));
 			H_T_TABLE.addFamily(new HColumnDescriptor("issue_info"));
 			H_T_TABLE.addFamily(new HColumnDescriptor("url"));
 			H_T_TABLE.addFamily(new HColumnDescriptor("keyword"));
 			admin.createTable(H_T_TABLE);
-			table = new HTable(conf, "T_TABLE_INFO");
+			table = new HTable(conf, "T_PAPER_INFO");
 			System.out.println("----------creat table number! : ------------");
 		} else {
-			table = new HTable(conf, "T_TABLE_INFO");
+			table = new HTable(conf, "T_PAPER_INFO");
 			System.out.println("----------exist table number! : ------------");
 
 		}
