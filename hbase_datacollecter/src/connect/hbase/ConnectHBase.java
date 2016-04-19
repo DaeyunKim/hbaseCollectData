@@ -24,13 +24,15 @@ import hbase_Test.paperInfo;
 
 public class ConnectHBase {
 	private static Configuration conf = null;
-	private static HBaseAdmin admin;
+	private static HBaseAdmin admin=null;
 	public static HTable table = null, table1, table2, table3, table4, table5, table6;
 
 	public ConnectHBase() throws IOException {
 		mkconfig();
 		mkAdmin();
+		System.out.println("success mkadmin");
 		createTable();
+		System.out.println("success create Table");
 		setHTable();
 
 	}
@@ -48,9 +50,7 @@ public class ConnectHBase {
 
 		try {
 			admin = new HBaseAdmin(conf);
-			admin.disableTable("T_RELATION_INFO");
-			System.out.println("xpdlqmf tkrwp ");;
-			admin.deleteTable("T_RELATION_INFO");
+			
 		} catch (MasterNotRunningException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -94,9 +94,9 @@ public class ConnectHBase {
 
 	public static void createTable() throws IOException {
 		System.out.println("create table");
-
-		if (!admin.isTableAvailable("T_PAPER_INFO")) {
-
+	
+		if (!admin.tableExists("T_PAPER_INFO")) {
+			System.out.println("----------creat table number! : -----------1-");
 			HTableDescriptor H_T_TABLE = new HTableDescriptor("T_PAPER_INFO");
 			H_T_TABLE.addFamily(new HColumnDescriptor("paper_info"));
 			H_T_TABLE.addFamily(new HColumnDescriptor("issue_info"));
@@ -111,6 +111,9 @@ public class ConnectHBase {
 
 		}
 
+		System.out.println("admin.isTableAvailable2 ");
+		
+		
 		if (!admin.isTableAvailable("T_EXPERT_INFO")) {
 			HTableDescriptor H_T_EXPERT_INFO = new HTableDescriptor("T_EXPERT_INFO");
 			H_T_EXPERT_INFO.addFamily(new HColumnDescriptor("paper_info"));
@@ -218,7 +221,13 @@ public class ConnectHBase {
 
 	}
 
-	public void insertKeywordInfo(String keyword, String paperId) {
+	public void insertKeywordInfo(String keyword, String url)
+			throws RetriesExhaustedWithDetailsException, InterruptedIOException {
+		Put put = new Put(Bytes.toBytes(transMD5(keyword)));
+
+		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("paper_id"), Bytes.toBytes(transMD5(url)));
+
+		table2.put(put);
 
 	}
 
@@ -232,8 +241,12 @@ public class ConnectHBase {
 
 	public void insertPScore(String paperId, String score) {
 
+		
+		
+		
 	}
-//call names
+
+	// call names
 	public void insertCountRelation(paperInfo pi) throws IOException {
 		System.out.println("insert relation author info ");
 		int cnt = 0;
@@ -275,7 +288,8 @@ public class ConnectHBase {
 			}
 		}
 	}
-	//call integer
+
+	// call integer
 	public void insertCountRelation(ArrayList<Integer> mappingNum) throws IOException {
 		// TODO Auto-generated method stub
 		int cnt = 0;
@@ -283,9 +297,9 @@ public class ConnectHBase {
 		ArrayList<String> name = new ArrayList<String>();
 
 		for (int i = 0; i < mappingNum.size(); i++) {
-			name.add(i, "name:"+mappingNum.get(i));
+			name.add(i, "name:" + mappingNum.get(i));
 		}
-				
+
 		for (int i = 0; i < mappingNum.size(); i++) {
 
 			String strTemp = name.get(i);
@@ -295,10 +309,10 @@ public class ConnectHBase {
 				if (i != j) {
 					get.addColumn(Bytes.toBytes("with_who"), Bytes.toBytes(name.get(j)));
 				}
-			}	
-			
+			}
+
 			result = table6.get(get);
-		
+
 			for (int j = 0; j < mappingNum.size(); j++) {
 				if (i != j) {
 					try {
@@ -307,15 +321,16 @@ public class ConnectHBase {
 					} catch (Exception e) {
 						cnt = 0;
 					}
-					if(cnt==0) cnt=1;
+					if (cnt == 0)
+						cnt = 1;
 					put.add(Bytes.toBytes("with_who"), Bytes.toBytes(name.get(j)), Bytes.toBytes(cnt));
 					table6.put(put);
-					
+
 				}
 			}
 		}
 	}
-	
+
 	public String transMD5(String str) {
 
 		String MD5 = "";
@@ -338,6 +353,5 @@ public class ConnectHBase {
 		return MD5;
 
 	}
-
 
 }

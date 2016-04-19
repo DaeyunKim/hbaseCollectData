@@ -8,6 +8,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -34,6 +35,8 @@ public class source {
 	//
 	ConnectHBase cht = new ConnectHBase();
 	ConnectRDB crdb = new ConnectRDB();
+	GregorianCalendar today = new GregorianCalendar ( );
+	int today_year=today.YEAR;
 	public source() throws IOException, ParserConfigurationException, SAXException {
 
 		System.out.println("검색어");
@@ -162,8 +165,6 @@ public class source {
 							cht.insertExpertInfo(temp_author.get(o)+"_" +temp_keyword.get(q)+"_"+timestamp(),paper.linkURL,"0");// Author_classify							
 						}
 						
-
-
 					}
 	
 					
@@ -180,6 +181,9 @@ public class source {
 */
 				
 				//FIX ME insertKeywordInfo
+				//samlpe input context=> keyword
+				 cht.insertKeywordInfo(keyword, paper.linkURL);
+				 
 				//FIX ME PS
 				//FIX ME citationInfo
 				//FIX ME relationInfo
@@ -193,6 +197,16 @@ public class source {
 				// 입력받아야됨
 			//	cht.insertKCIIF(paper.publisher_name, "score");
 			//	cht.insertPScore("paper.linkURL", "score");
+				System.out.println("paper.Issue_date : "+paper.Issue_date);
+				String hyear = paper.Issue_date.substring(0,3);
+				Integer.parseInt(hyear);//paper Year
+				int n_diff = today_year-Integer.parseInt(hyear);
+				//currentYear
+				 
+				
+				//int score = 1/Math.log()) ;
+				//cht.insertPScore( paper.linkURL,);
+				
 				// 이부분 인용수
 			//	cht.insertPaperCitationInfo(paper.linkURL, "nCitation", "Citation_year");
 
