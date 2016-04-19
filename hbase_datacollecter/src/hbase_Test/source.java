@@ -206,7 +206,7 @@ public class source {
 				//currentYear
 				 
 				
-				float score = (float) (1/(Math.log(n_diff))) ;
+				float score = (float) (1/(Math.log(2+n_diff))) ;
 				cht.insertPScore(paper.linkURL,score);
 				
 				// 이부분 인용수
