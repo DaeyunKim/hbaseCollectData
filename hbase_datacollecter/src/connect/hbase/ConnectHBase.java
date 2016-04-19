@@ -187,7 +187,7 @@ public class ConnectHBase {
 		// issue_number + '*' + issue_date + '*'
 		// + issue_name + '*' + publisher_name + '*' +
 		// authorURL+'*'+paperURL+'*'+publisherURL+'*'+keyword);
-		Put put = new Put(Bytes.toBytes(transMD5(title + url)));
+		Put put = new Put(Bytes.toBytes(transMD5(url)));
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("title"), Bytes.toBytes(title));
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("nAuthor"), Bytes.toBytes(nAuthor));
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("Author_names"), Bytes.toBytes(Author_names));
