@@ -48,6 +48,9 @@ public class ConnectHBase {
 
 		try {
 			admin = new HBaseAdmin(conf);
+			admin.disableTable("T_RELATION_INFO");
+			System.out.println("xpdlqmf tkrwp ");;
+			admin.deleteTable("T_RELATION_INFO");
 		} catch (MasterNotRunningException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -75,7 +78,7 @@ public class ConnectHBase {
 		table5.setWriteBufferSize(1024 * 1024 * 12);
 		table6.setAutoFlush(false);
 		table6.setWriteBufferSize(1024 * 1024 * 12);
-		
+
 	};
 
 	public void exeFlushcommit() throws RetriesExhaustedWithDetailsException, InterruptedIOException {
@@ -86,7 +89,6 @@ public class ConnectHBase {
 		table4.flushCommits();
 		table5.flushCommits();
 		table6.flushCommits();
-		
 
 	}
 
@@ -127,7 +129,7 @@ public class ConnectHBase {
 			admin.createTable(H_T_KEYWORD_INFO);
 			table2 = new HTable(conf, "T_KEYWORD_INFO");
 			System.out.println("Auto flush: " + table2.isAutoFlush());
-		}else {
+		} else {
 			table2 = new HTable(conf, "T_KEYWORD_INFO");
 			System.out.println("----------exist table number! : ------------");
 
@@ -138,7 +140,7 @@ public class ConnectHBase {
 			H_T_KCIIF_INFO.addFamily(new HColumnDescriptor("Impact_factor"));
 			admin.createTable(H_T_KCIIF_INFO);
 			table4 = new HTable(conf, "T_KCIIF_INFO");
-		}else {
+		} else {
 			table4 = new HTable(conf, "T_KCIIF_INFO");
 			System.out.println("----------exist table number! : ------------");
 
@@ -149,17 +151,17 @@ public class ConnectHBase {
 			H_MT_P_SCORE.addFamily(new HColumnDescriptor("pscore"));
 			admin.createTable(H_MT_P_SCORE);
 			table5 = new HTable(conf, "MT_P_SCORE");
-		}else {
+		} else {
 			table5 = new HTable(conf, "MT_P_SCORE");
 			System.out.println("----------exist table number! : ------------");
 
 		}
 		if (!admin.isTableAvailable("T_RELATION_INFO")) {
 			HTableDescriptor H_MT_P_SCORE = new HTableDescriptor("T_RELATION_INFO");
-			H_MT_P_SCORE.addFamily(new HColumnDescriptor("cf1"));
+			H_MT_P_SCORE.addFamily(new HColumnDescriptor("with_who"));
 			admin.createTable(H_MT_P_SCORE);
 			table6 = new HTable(conf, "T_RELATION_INFO");
-		}else {
+		} else {
 			table6 = new HTable(conf, "T_RELATION_INFO");
 			System.out.println("----------exist table number! : ------------");
 
@@ -171,7 +173,7 @@ public class ConnectHBase {
 			admin.createTable(H_T_PAPER_CITATION_INFO);
 			table3 = new HTable(conf, "T_PAPER_CITATION_INFO");
 			System.out.println("Auto flush: " + table2.isAutoFlush());
-		}else {
+		} else {
 			table3 = new HTable(conf, "T_PAPER_CITATION_INFO");
 			System.out.println("----------exist table number! : ------------");
 
@@ -231,18 +233,18 @@ public class ConnectHBase {
 	public void insertPScore(String paperId, String score) {
 
 	}
-
+//call names
 	public void insertCountRelation(paperInfo pi) throws IOException {
-System.out.println("insert relation author info ");
+		System.out.println("insert relation author info ");
 		int cnt = 0;
 		Result result = null;
 		ArrayList<String> name = new ArrayList<String>();
 
 		for (int i = 0; i < pi.author.size(); i++) {
 			name.add(i, pi.author.get(i).name);
-			System.out.println("name : "+pi.author.get(i).name);
+			System.out.println("name : " + pi.author.get(i).name);
 		}
-		
+
 		for (int i = 0; i < pi.author.size(); i++) {
 
 			String strTemp = pi.author.get(i).name;
@@ -273,7 +275,47 @@ System.out.println("insert relation author info ");
 			}
 		}
 	}
+	//call integer
+	public void insertCountRelation(ArrayList<Integer> mappingNum) throws IOException {
+		// TODO Auto-generated method stub
+		int cnt = 0;
+		Result result = null;
+		ArrayList<String> name = new ArrayList<String>();
 
+		for (int i = 0; i < mappingNum.size(); i++) {
+			name.add(i, "name:"+mappingNum.get(i));
+		}
+				
+		for (int i = 0; i < mappingNum.size(); i++) {
+
+			String strTemp = name.get(i);
+			Put put = new Put(Bytes.toBytes(strTemp));
+			Get get = new Get(Bytes.toBytes(name.get(i)));
+			for (int j = 0; j < mappingNum.size(); j++) {
+				if (i != j) {
+					get.addColumn(Bytes.toBytes("with_who"), Bytes.toBytes(name.get(j)));
+				}
+			}	
+			
+			result = table6.get(get);
+		
+			for (int j = 0; j < mappingNum.size(); j++) {
+				if (i != j) {
+					try {
+						cnt = Bytes.toInt(result.getValue(Bytes.toBytes("with_who"), Bytes.toBytes(name.get(j))));
+						cnt++;
+					} catch (Exception e) {
+						cnt = 0;
+					}
+					if(cnt==0) cnt=1;
+					put.add(Bytes.toBytes("with_who"), Bytes.toBytes(name.get(j)), Bytes.toBytes(cnt));
+					table6.put(put);
+					
+				}
+			}
+		}
+	}
+	
 	public String transMD5(String str) {
 
 		String MD5 = "";
@@ -296,4 +338,6 @@ System.out.println("insert relation author info ");
 		return MD5;
 
 	}
+
+
 }

@@ -183,8 +183,8 @@ public class source {
 				//FIX ME PS
 				//FIX ME citationInfo
 				//FIX ME relationInfo
-				cht.insertCountRelation(paper);
-				
+				//cht.insertCountRelation(paper);
+				cht.insertCountRelation(temp_author);
 				//FIX ME count keyword, count paper
 				
 				
