@@ -35,8 +35,8 @@ public class source {
 	//
 	ConnectHBase cht = new ConnectHBase();
 	ConnectRDB crdb = new ConnectRDB();
-	GregorianCalendar today = new GregorianCalendar ( );
-	int today_year=today.YEAR;
+	Calendar today = Calendar.getInstance();
+	int today_year=today.get(Calendar.YEAR);
 	public source() throws IOException, ParserConfigurationException, SAXException {
 
 		System.out.println("검색어");
@@ -79,10 +79,10 @@ public class source {
 				getDocument(in, url);
 				getItemData(doc, keyword);
 			}
-			
+		//	cht.exeFlushcommit();
 		}
-		
 		cht.exeFlushcommit();
+		
 		crdb.close();
 	}
 
@@ -200,8 +200,9 @@ public class source {
 				
 				//calculate P_SCORE
 				//System.out.println("paper.Issue_date : "+paper.Issue_date);
-				String hyear = paper.Issue_date.substring(0,3);
+				String hyear = paper.Issue_date.substring(0,4).trim();
 				Integer.parseInt(hyear);//paper Year
+				System.out.println("paper IssueDate : "+hyear+" currentYear : "+today_year);
 				int n_diff = today_year-Integer.parseInt(hyear);
 				//currentYear
 				 

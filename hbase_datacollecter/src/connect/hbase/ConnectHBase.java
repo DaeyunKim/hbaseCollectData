@@ -30,9 +30,9 @@ public class ConnectHBase {
 	public ConnectHBase() throws IOException {
 		mkconfig();
 		mkAdmin();
-		System.out.println("success mkadmin");
+	//	System.out.println("success mkadmin");
 		createTable();
-		System.out.println("success create Table");
+//		System.out.println("success create Table");
 		setHTable();
 
 	}
@@ -250,6 +250,7 @@ public class ConnectHBase {
 	}
 
 	// call names
+	/*
 	public void insertCountRelation(paperInfo pi) throws IOException {
 		System.out.println("insert relation author info ");
 		int cnt = 0;
@@ -291,7 +292,7 @@ public class ConnectHBase {
 			}
 		}
 	}
-
+*/
 	// call integer
 	public void insertCountRelation(ArrayList<Integer> mappingNum) throws IOException {
 		// TODO Auto-generated method stub
