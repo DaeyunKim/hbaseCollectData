@@ -8,8 +8,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Scanner;
+import java.util.HashMap;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -42,7 +41,9 @@ public class source {
 	int today_year = today.get(Calendar.YEAR);
 	UseOntology uo = new UseOntology();// ontology keywords
 	String keyword[] = { "영상처리", "인공지능", "자연어처리", "소셜", "빅데이터", "네트워크" };
-
+	
+	//keyword,year,count
+	
 	public source() throws IOException, ParserConfigurationException, SAXException {
 
 		// System.out.println("검색어");
