@@ -38,7 +38,7 @@ public	ArrayList<String> paper_keyword = new ArrayList<String>();
 		for(Author o : author){
 			
 			each_author.add(o.name);
-			System.out.println("paper.eachAuthor() : "+o.name);
+	//		System.out.println("paper.eachAuthor() : "+o.name);
 		}	
 				
 		return each_author; 
@@ -59,7 +59,7 @@ public	ArrayList<String> paper_keyword = new ArrayList<String>();
 			
 			//1
 		}			
-		System.out.println("authorURL"+str);
+	//	System.out.println("authorURL"+str);
 		return str; 
 	}
 	

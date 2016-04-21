@@ -23,38 +23,50 @@ import org.xml.sax.SAXException;
 
 import connect.hbase.ConnectHBase;
 import connect.rdb.ConnectRDB;
+import ontology.UseOntology;
 
 public class source {
 	int count = 0;
 	Document doc = null;
-	String add1 = "http://api.dbpia.co.kr/v1/search/search.xml?key=8cdcafebb30f172422d40f954d1cd40d&target=se_adv&searchall=";
+	String add1 = "http://api.dbpia.co.kr/v1/search/search.xml?pyear=3&pyear_start=2011&category=4&pyear_end=2016&key=8cdcafebb30f172422d40f954d1cd40d&target=se_adv&searchall=";
 	int number = 0;
 	int pageNumber = 1;
 	int categoryNum = 1;
 	int authorURL = 0;
+
 	//
 	ConnectHBase cht = new ConnectHBase();
+	// ConnectHBase cht = null;
 	ConnectRDB crdb = new ConnectRDB();
 	Calendar today = Calendar.getInstance();
-	int today_year=today.get(Calendar.YEAR);
+	int today_year = today.get(Calendar.YEAR);
+	UseOntology uo = new UseOntology();// ontology keywords
+	String keyword[] = { "영상처리", "인공지능", "자연어처리", "소셜", "빅데이터", "네트워크" };
+
 	public source() throws IOException, ParserConfigurationException, SAXException {
 
-		System.out.println("검색어");
-		getData();
-		System.out.println("총 갯수 : " + number + " 카테고리 : " + (categoryNum - 1) + " 페이지수 : " + (pageNumber - 1));
-		//System.out.println("url수 : " + authorURL);
-	
+		// System.out.println("검색어");
+		// for(String keyword:keyword){
+
+		number = 0;
+		getData("인공지능");
+		// getData();
+		System.out.println("총 갯수 : " + number + " keyword : " + keyword + " 페이지수 : " + (pageNumber - 1));
+
+		// }
+
+		crdb.close();
 	}
 
-	public void getData() throws IOException, ParserConfigurationException, SAXException {
+	public void getData(String keyword) throws IOException, ParserConfigurationException, SAXException {
+		/*
+		 * Scanner sc = new Scanner(System.in); String keyword = sc.nextLine();
+		 * this.add1=add1+keyword;
+		 */
+		String searchUrl = add1 + keyword;
+		System.out.println(searchUrl);
 
-		Scanner sc = new Scanner(System.in);
-		String keyword = sc.nextLine();
-
-		this.add1 = add1 + keyword;
-
-		System.out.println(add1);
-		URL url = new URL(add1);
+		URL url = new URL(searchUrl);
 		InputStream in = url.openStream();
 		BufferedReader rd = new BufferedReader(new InputStreamReader(in));
 		String line;
@@ -62,28 +74,40 @@ public class source {
 		while ((line = rd.readLine()) != null) {
 			String temp = line;
 			response.append(temp);
-			// System.out.println(temp);
+			// System.out.println("temp : "+temp);
 			response.append('\r');
 		}
 		rd.close();
 		getDocument(in, url);
-		pageNumber(doc);
+		System.out.println("pageNumber(doc) : " + pageNumber(doc));
+		;
 		System.out.println("Auto flush: " + cht.table.isAutoFlush());
-		
-		//pageNumber(doc)  page number
-		for (pageNumber = 1; pageNumber <1+1; pageNumber++) {
-					
-			for (categoryNum = 1; categoryNum < 10; categoryNum++) {
-				String url_page = add1 + "&pagenumber=" + pageNumber + "&category=" + categoryNum;
-				url = new URL(url_page);
-				getDocument(in, url);
+
+		// pageNumber(doc) page number
+		for (pageNumber = 1; pageNumber < 1 + 1; pageNumber++) {
+
+			String url_page = searchUrl + "&pagenumber=" + pageNumber;
+			url = new URL(url_page);
+			getDocument(in, url);
+			System.out.println("pageNumber : " + pageNumber);
+			NodeList itemNodeList = doc.getElementsByTagName("item");
+
+			// System.out.println("itemNodeList.getLength() :
+			// "+itemNodeList.getLength());
+			int n = itemNodeList.getLength();
+			if (n != 0) {
+				System.out.println("1page stop n : " + n + " itemNodeList.getLength() : " + itemNodeList.getLength());
 				getItemData(doc, keyword);
+			} else {
+
+				System.out.println("2page stop n : " + n + " itemNodeList.getLength() : " + itemNodeList.getLength());
+
 			}
-		//	cht.exeFlushcommit();
+			System.out.println("page stop" );
 		}
+		System.out.println("flush1 stop" );
 		cht.exeFlushcommit();
-		
-		crdb.close();
+		System.out.println("flush2 stop" );
 	}
 
 	public void getDocument(InputStream str, URL url) throws ParserConfigurationException, IOException, SAXException {
@@ -105,11 +129,10 @@ public class source {
 
 		NodeList itemNodeList = doc.getElementsByTagName("item");
 
-		System.out.println("itemwjscptn  : " + itemNodeList.getLength());
+		System.out.println("item  : " + itemNodeList.getLength());
 
-		
-		
 		for (int i = 0; i < itemNodeList.getLength(); i++) {
+			
 			paperInfo paper = new paperInfo(keyword);
 			Node itemNode = itemNodeList.item(i);
 			if (itemNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -119,113 +142,116 @@ public class source {
 				getPublisher(itemElement, paper);
 				getIssue(itemElement, paper);
 				getlinkURL(itemElement, paper);
-				//setKeyWords(ArrayList<String> keywords);
+				// setKeyWords(ArrayList<String> keywords);
 				paper.paper_keyword.add(keyword);
-				System.out.println("텍스트에 들어가게될 논문 정보 :: " + paper.callAuthor());
-				cht.insertPaperInfo(paper.linkURL, paper.title,paper.transAuthorSize(), paper.callAuthor(),
-						paper.Issue_number, paper.Issue_date, paper.Issue_name, paper.publisher_name, paper.callAuthorURL(),
-						paper.linkURL, paper.publisher_url,keyword);// Ask
-																		// about
-													// keyword.?
+				// System.out.println("텍스트에 들어가게될 논문 정보 :: " +
+				// paper.callAuthor());
+				cht.insertPaperInfo(paper.linkURL, paper.title, paper.transAuthorSize(), paper.callAuthor(),
+						paper.Issue_number, paper.Issue_date, paper.Issue_name, paper.publisher_name,
+						paper.callAuthorURL(), paper.linkURL, paper.publisher_url, keyword);// Ask
+																							// about
+				// keyword.?
 				System.out.println("insert data success");
-				
-				//authors going to working 20160405--
-				ArrayList<String> keywords = new ArrayList<String>();//get minsoo's ontology
-				keywords.add(keyword);
-				keywords.add("db");
-				ArrayList<Integer> temp_author = crdb.getNum(paper.eachAuthor(),0);//Integer/ArrayList
-				ArrayList<Integer> temp_keyword =crdb.getNum(keywords, 1);
-				//FIX ME insertExpertInfo
-				 System.out.println("paper.Author().size() : "+paper.author.size());
-				 //System.out.println("paper.eachAuthor().size() : "+paper.eachAuthor().size());
-				System.out.println("temp_author");
-				for(int p:temp_author){
-					
-					System.out.println(p);
-					
-				}
-				System.out.println("temp_keyword");
-				for(int p:temp_keyword){
-					
-					System.out.println(p);
-					
-				}
-				
-				//first author insert main Author
-				// create RDB 
-				
-				
-				for(int q=0;q<temp_keyword.size();q++){
-					
+
+				// authors going to working 20160405--
+				// insert keyword use Ontology
+				ArrayList<String> keywords = uo.mkOntoKeywords(paper.title, keyword);// get
+																						// minsoo's
+																						// ontology
+
+				ArrayList<Integer> temp_author = crdb.getNum(paper.eachAuthor(), 0);// Integer/ArrayList
+				ArrayList<Integer> temp_keyword = crdb.getNum(keywords, 1);
+				// FIX ME insertExpertInfo
+				// System.out.println("paper.Author().size() :
+				// "+paper.author.size());
+				// System.out.println("paper.eachAuthor().size() :
+				// "+paper.eachAuthor().size());
+				// System.out.println("temp_author");
+				/*
+				 * for(int p:temp_author){
+				 * 
+				 * System.out.println(p);
+				 * 
+				 * } // System.out.println("temp_keyword"); for(int
+				 * p:temp_keyword){
+				 * 
+				 * System.out.println(p);
+				 * 
+				 * }
+				 */
+				// first author insert main Author
+				// create RDB
+
+				for (int q = 0; q < temp_keyword.size(); q++) {
+
 					for (int o = 0; o < temp_author.size(); o++) {
-						if(o==0){
-							cht.insertExpertInfo(temp_author.get(o)+"_"+ temp_keyword.get(q)+"_"+timestamp(),paper.linkURL,"1");			
-							
-						}else{
-							cht.insertExpertInfo(temp_author.get(o)+"_" +temp_keyword.get(q)+"_"+timestamp(),paper.linkURL,"0");// Author_classify							
+						if (o == 0) {
+							cht.insertExpertInfo(temp_author.get(o) + "_" + temp_keyword.get(q) + "_" + timestamp(),
+									paper.linkURL, "1");
+
+						} else {
+							cht.insertExpertInfo(temp_author.get(o) + "_" + temp_keyword.get(q) + "_" + timestamp(),
+									paper.linkURL, "0");// Author_classify
 						}
-						
+
 					}
-	
-					
-				}
-								
-/*
-				for (int o = 1; i < paper.author.size(); o++) {
-						for(int k=0;k<paper.paper_keyword.size();k++){
-								cht.insertExpertInfo(crdb.getNum(paper.eachAuthor(),0).get(0) + crdb.getNum(crdb.paper_keyword, 0).get(k)+timestamp(),paper.linkURL,"0");// Author_classify		
-						}
-					
 
 				}
-*/
-				
-				//FIX ME insertKeywordInfo
-				//samlpe input context=> keyword
-				 cht.insertKeywordInfo(keyword, paper.linkURL);
-				 
-				//FIX ME PS
-				//FIX ME citationInfo
-				//FIX ME relationInfo
-				//cht.insertCountRelation(paper);
+
+				/*
+				 * for (int o = 1; i < paper.author.size(); o++) { for(int
+				 * k=0;k<paper.paper_keyword.size();k++){
+				 * cht.insertExpertInfo(crdb.getNum(paper.eachAuthor(),0).get(0)
+				 * + crdb.getNum(crdb.paper_keyword,
+				 * 0).get(k)+timestamp(),paper.linkURL,"0");// Author_classify }
+				 * 
+				 * 
+				 * }
+				 */
+
+				// FIX ME insertKeywordInfo
+				// samlpe input context=> keyword
+
+				for (int q = 0; q < temp_keyword.size(); q++) {
+
+					cht.insertKeywordInfo(temp_keyword.get(q) + "_" + timestamp(), paper.linkURL);
+
+				}
+
+				// FIX ME PS
+				// FIX ME citationInfo
+				// FIX ME relationInfo
+				// cht.insertCountRelation(paper);
 				cht.insertCountRelation(temp_author);
-				//FIX ME count keyword, count paper
-				
-				
-		//		cht.insertKeywordInfo(keyword, paper.linkURL);
+				// FIX ME count keyword, count paper
+
+				//cht.insertKeywordInfo(keyword, paper.linkURL);
 
 				// 입력받아야됨
-			//	cht.insertKCIIF(paper.publisher_name, "score");
-			//	cht.insertPScore("paper.linkURL", "score");
-				
-				//calculate P_SCORE
-				//System.out.println("paper.Issue_date : "+paper.Issue_date);
-				String hyear = paper.Issue_date.substring(0,4).trim();
-				Integer.parseInt(hyear);//paper Year
-				System.out.println("paper IssueDate : "+hyear+" currentYear : "+today_year);
-				int n_diff = today_year-Integer.parseInt(hyear);
-				//currentYear
-				 
-				
-				float score = (float) (1/(Math.log(2+n_diff))) ;
-				cht.insertPScore(paper.linkURL,score);
-				
+				// cht.insertKCIIF(paper.publisher_name, "score");
+				// cht.insertPScore("paper.linkURL", "score");
+
+				// calculate P_SCORE
+				// System.out.println("paper.Issue_date : "+paper.Issue_date);
+				String hyear = paper.Issue_date.substring(0, 4).trim();
+				Integer.parseInt(hyear);// paper Year
+				System.out.println("paper IssueDate : " + hyear + " currentYear : " + today_year);
+				int n_diff = today_year - Integer.parseInt(hyear);
+				// currentYear
+
+				float score = (float) (1 / (Math.log(2 + n_diff)));
+				cht.insertPScore(paper.linkURL,score);// edit 20160421
+
 				// 이부분 인용수
-			//	cht.insertPaperCitationInfo(paper.linkURL, "nCitation", "Citation_year");
+				cht.insertPaperCitationInfo(paper.linkURL, "nCitation", "Citation_year");
 
-				
-				
-				
-				
 			}
+			number++;
+			// System.out.println("Author Size: " + paper.author.size());
 
-			System.out.println("Author Size: " + paper.author.size());
+		}
 
-		} 
-	
-		
 	}
-
 
 	public int pageNumber(Document doc) {
 		NodeList itemNodeList = doc.getElementsByTagName("paramdata");
@@ -260,10 +286,7 @@ public class source {
 
 		}
 
- 
-
 	}
-
 
 	public void getAuthors(Element itemElement, paperInfo paper) {
 		paper.author = new ArrayList<Author>();
@@ -289,19 +312,15 @@ public class source {
 
 					name = extractValue(authorElement3.getChildNodes().item(0).toString());
 					try {
-						
+
 						NodeList authorInfo1 = authorsElement.getElementsByTagName("url");
 						Element authorElement1 = (Element) authorInfo1.item(i);
-					//	System.out.println(authorElement1.getChildNodes().item(0).toString()==null);
-						
-						
-							url = extractValue(authorElement1.getChildNodes().item(0).toString());	
-						
-						
-						
+						// System.out.println(authorElement1.getChildNodes().item(0).toString()==null);
+
+						url = extractValue(authorElement1.getChildNodes().item(0).toString());
+
 					} catch (NullPointerException np) {
 
-					
 					}
 
 					if (name.indexOf("<span") == -1) {
@@ -370,20 +389,17 @@ public class source {
 			name = "null";
 		}
 
-
 		try {
 			number = extractValue(issue_Num_ele.getChildNodes().item(0).toString());
 		} catch (NullPointerException npe) {
 			number = "null";
 		}
 
-
-		try{
-			date = extractValue(issue_date_ele.getChildNodes().item(0).toString());	
+		try {
+			date = extractValue(issue_date_ele.getChildNodes().item(0).toString());
 		} catch (NullPointerException npe) {
 			date = "null";
 		}
-		
 
 		paper.Issue_name = name;
 		paper.Issue_number = number;
@@ -400,45 +416,41 @@ public class source {
 		paper.linkURL = linkurl;
 	}
 
-
 	public String extractValue(String st) {
 		String str = st;
 		str = str.substring(8, str.length() - 1).trim();
 		return str;
 	}
 
-	
 	String extractTitle(String title) {
 		// TODO 자동 생성된 메소드 스텁
-		String result_str=title;
-		String str=title;
-		int first_loc=0;
-		
-			while(result_str.indexOf("<") >= 0) 
-			{
-				result_str="";
-				
-				if(str.indexOf("<") > 0)
-				{
-					result_str += str.substring(first_loc, str.indexOf("<"));
-				}
-				result_str += str.substring(str.indexOf(">")+1, str.length());	
-				str = result_str;
-				
+		String result_str = title;
+		String str = title;
+		int first_loc = 0;
+
+		while (result_str.indexOf("<") >= 0) {
+			result_str = "";
+
+			if (str.indexOf("<") > 0) {
+				result_str += str.substring(first_loc, str.indexOf("<"));
 			}
-		
+			result_str += str.substring(str.indexOf(">") + 1, str.length());
+			str = result_str;
+
+		}
+
 		return result_str;
 	}
-//time
-	public String timestamp(){
+
+	// time
+	public String timestamp() {
 		String time;
 		Calendar calendar = Calendar.getInstance();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
-		
-		 time= dateFormat.format(calendar.getTime());
-		
+
+		time = dateFormat.format(calendar.getTime());
+
 		return time;
 	}
-	
-	
+
 }

@@ -25,11 +25,12 @@ import hbase_Test.paperInfo;
 public class ConnectHBase {
 	private static Configuration conf = null;
 	private static HBaseAdmin admin=null;
-	public static HTable table = null, table1, table2, table3, table4, table5, table6;
+	public static HTable table , table1, table2, table3, table4, table5, table6;
 
 	public ConnectHBase() throws IOException {
 		mkconfig();
 		mkAdmin();
+	//	deleteTable();
 	//	System.out.println("success mkadmin");
 		createTable();
 //		System.out.println("success create Table");
@@ -81,17 +82,44 @@ public class ConnectHBase {
 
 	};
 
-	public void exeFlushcommit() throws RetriesExhaustedWithDetailsException, InterruptedIOException {
-		table.flushCommits();
-		table1.flushCommits();
-		table2.flushCommits();
-		table3.flushCommits();
-		table4.flushCommits();
-		table5.flushCommits();
-		table6.flushCommits();
+	public void exeFlushcommit()  {
+		try{
+			System.out.println("flussh start");
+			table.flushCommits();
+			table1.flushCommits();
+			table2.flushCommits();
+			table3.flushCommits();
+			table4.flushCommits();
+			table5.flushCommits();
+			table6.flushCommits();
 
+		}catch( RetriesExhaustedWithDetailsException re){
+			re.printStackTrace();
+			
+		}catch(InterruptedIOException io){
+			io.printStackTrace();
+		}
+		
 	}
-
+	void deleteTable() throws IOException{
+		System.out.println("delete Table");
+		admin.disableTable("T_PAPER_INFO");
+		System.out.println("delete T_PAPER_INFO");
+        admin.deleteTable("T_PAPER_INFO");
+        admin.disableTable("T_EXPERT_INFO");
+        admin.deleteTable("T_EXPERT_INFO");
+        admin.disableTable("T_KEYWORD_INFO");
+        admin.deleteTable("T_KEYWORD_INFO");
+        admin.disableTable("T_KCIIF_INFO");
+        admin.deleteTable("T_KCIIF_INFO");
+        admin.disableTable("MT_P_SCORE");
+        admin.deleteTable("MT_P_SCORE");
+        admin.disableTable("T_RELATION_INFO");
+        admin.deleteTable("T_RELATION_INFO");
+        admin.disableTable("T_PAPER_CITATION_INFO");
+        admin.deleteTable("T_PAPER_CITATION_INFO");
+        System.out.println("delete Table");
+	}
 	public static void createTable() throws IOException {
 		System.out.println("create table");
 	
@@ -110,8 +138,6 @@ public class ConnectHBase {
 			System.out.println("----------exist table number! : ------------");
 
 		}
-
-		System.out.println("admin.isTableAvailable2 ");
 		
 		
 		if (!admin.isTableAvailable("T_EXPERT_INFO")) {
@@ -204,7 +230,7 @@ public class ConnectHBase {
 		put.add(Bytes.toBytes("keyword"), Bytes.toBytes("keywords"), Bytes.toBytes(keyword));
 
 		table.put(put);
-
+		//
 	}
 
 	public void insertExpertInfo(String nameKeyword, String paperId, String AuthorClassify)
@@ -223,7 +249,7 @@ public class ConnectHBase {
 
 	public void insertKeywordInfo(String keyword, String url)
 			throws RetriesExhaustedWithDetailsException, InterruptedIOException {
-		Put put = new Put(Bytes.toBytes(transMD5(keyword)));
+		Put put = new Put(Bytes.toBytes(keyword));
 
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("paper_id"), Bytes.toBytes(transMD5(url)));
 
@@ -239,14 +265,23 @@ public class ConnectHBase {
 
 	}
 
-	public void insertPScore(String paperId, float score) throws RetriesExhaustedWithDetailsException, InterruptedIOException {
+	public void insertPScore(String paperId, float score)  {
 
-		Put put = new Put(Bytes.toBytes(transMD5(paperId)));
+		try{
+			Put put5 = new Put(Bytes.toBytes(transMD5(paperId)));
 
-		put.add(Bytes.toBytes("pscroe"), Bytes.toBytes("score"), Bytes.toBytes(score));
-
-		table5.put(put);
-		
+			put5.add(Bytes.toBytes("pscroe"), Bytes.toBytes("score"), Bytes.toBytes(score));
+			System.out.println("input  pscroe"+score);
+			table5.put(put5);
+			
+			
+		}catch( RetriesExhaustedWithDetailsException re){
+			re.printStackTrace();
+			
+		}catch(InterruptedIOException io){
+			io.printStackTrace();
+		}
+				
 	}
 
 	// call names
