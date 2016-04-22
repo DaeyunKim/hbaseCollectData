@@ -40,43 +40,46 @@ public class source {
 	Calendar today = Calendar.getInstance();
 	int today_year = today.get(Calendar.YEAR);
 	UseOntology uo = new UseOntology();// ontology keywords
-	String keyword[] = { "영상처리", "인공지능", "자연어처리", "소셜", "빅데이터", "네트워크" ,"정보보안","데이터베이스","센서","온톨로지","클라우드","프로그래밍언어"};
+	String searchkeyword[] = { "영상처리", "인공지능", "자연어처리", "소셜", "빅데이터", "네트워크", "정보보안", "데이터베이스", "센서", "온톨로지", "클라우드",
+			"프로그래밍언어" };
 	HashMap<String, int[]> keywordCount = new HashMap<String, int[]>();
 	// keyword,year,count
-	int year_count[];// allocate each keyword 0:2011 ~5: 2016
-	int sum_count[] = new int [6];
+	int year_count[][];// allocate each keyword 0:2011 ~5: 2016
+	int sum_count[] = new int[6];
 
 	public source() throws IOException, ParserConfigurationException, SAXException {
 
 		// System.out.println("검색어");
-		for (String keyword : keyword) {
-			year_count = new int[6];// allocate each keyword 0:2011 ~5: 2016
+		year_count = new int[12][6];// allocate each keyword 0:2011 ~5: 2016
+		// for (String keyword : keyword) {
+		for (int i = 0; i < searchkeyword.length; i++) {
 			number = 0;
-			getData(keyword);
+			getData(searchkeyword[i]);
 			// getData();
-			System.out.println("총 갯수 : " + number + " keyword : " + keyword + " 페이지수 : " + (pageNumber - 1));
-			
-			keywordCount.put(keyword, year_count);
-			
-			for(int i=0;i<6;i++){
-				
-				sum_count[i]+=year_count[i];
-				
+			System.out.println("총 갯수 : " + number + " keyword : " + searchkeyword + " 페이지수 : " + (pageNumber - 1));
+
+			// keywordCount.put(keyword, year_count);
+
+
+		}
+		for(int i=0;i<searchkeyword.length;i++){
+			keywordCount.put(searchkeyword[i],year_count[i]);
+			for (int j = 0; j < 6; j++) {
+				sum_count[j] += year_count[i][j];
 			}
 			
-			crdb.setKeywordPerYear(keywordCount);
-					
-			
 		}
+	
+		crdb.setKeywordPerYear(keywordCount);
 		crdb.setPaperPerYear(sum_count);
-		for(int s:sum_count){
-			
-			System.out.println("each year sum paper : "+s);
-			
+		for (int s : sum_count) {
+
+			System.out.println("each year sum paper : " + s);
+
 		}
-		//System.out.println("keyword Count 2011: "+keywordCount.get("영상처리")[0]);
-		
-		
+		// System.out.println("keyword Count 2011:
+		// "+keywordCount.get("영상처리")[0]);
+
 		crdb.close();
 	}
 
@@ -118,18 +121,21 @@ public class source {
 			// "+itemNodeList.getLength());
 			int n = itemNodeList.getLength();
 			if (n != 0) {
-				//System.out.println("1page stop n : " + n + " itemNodeList.getLength() : " + itemNodeList.getLength());
+				// System.out.println("1page stop n : " + n + "
+				// itemNodeList.getLength() : " + itemNodeList.getLength());
 				getItemData(doc, keyword);
 			} else {
 
-			//	System.out.println("2page stop n : " + n + " itemNodeList.getLength() : " + itemNodeList.getLength());
+				// System.out.println("2page stop n : " + n + "
+				// itemNodeList.getLength() : " + itemNodeList.getLength());
 
 			}
 			System.out.println("page stop");
+			cht.exeFlushcommit();
 		}
-//		System.out.println("flush1 stop");
-		cht.exeFlushcommit();
-//		System.out.println("flush2 stop");
+		// System.out.println("flush1 stop");
+
+		// System.out.println("flush2 stop");
 	}
 
 	public void getDocument(InputStream str, URL url) throws ParserConfigurationException, IOException, SAXException {
@@ -177,9 +183,7 @@ public class source {
 
 				// authors going to working 20160405--
 				// insert keyword use Ontology
-				ArrayList<String> keywords = uo.mkOntoKeywords(paper.title, keyword);// get
-																						// minsoo's
-																						// ontology
+				ArrayList<String> keywords = uo.mkOntoKeywords(paper.title, keyword);// get minsoo's ontology
 
 				ArrayList<Integer> temp_author = crdb.getNum(paper.eachAuthor(), 0);// Integer/ArrayList
 				ArrayList<Integer> temp_keyword = crdb.getNum(keywords, 1);
@@ -259,27 +263,38 @@ public class source {
 				System.out.println("paper IssueDate : " + hyear + " currentYear : " + today_year);
 				int n_diff = today_year - hyear_i;
 				float score = (float) (1 / (Math.log(2 + n_diff)));
-
-				switch (hyear_i) {
-				case 2011:
-					year_count[0]++;
-					break;
-				case 2012:
-					year_count[1]++;
-					break;
-				case 2013:
-					year_count[2]++;
-					break;
-				case 2014:
-					year_count[3]++;
-					break;
-				case 2015:
-					year_count[4]++;
-					break;
-				case 2016:
-					year_count[5]++;
-					break;
+				// year_count[keyword][year]
+				
+				
+				for (int k = 0; k < keywords.size(); k++) {
+					int keyword_number=0;
+					for(int z=0;z<searchkeyword.length;z++){
+						if(keywords.get(0).equals(searchkeyword[z])){
+							keyword_number=z;
+						}
+					}
+					switch (hyear_i) {
+					case 2011:
+						year_count[keyword_number][0]++;
+						break;
+					case 2012:
+						year_count[keyword_number][1]++;
+						break;
+					case 2013:
+						year_count[keyword_number][2]++;
+						break;
+					case 2014:
+						year_count[keyword_number][3]++;
+						break;
+					case 2015:
+						year_count[keyword_number][4]++;
+						break;
+					case 2016:
+						year_count[keyword_number][5]++;
+						break;
+					}
 				}
+
 				cht.insertPScore(paper.linkURL, score);// edit 20160421
 
 				// 이부분 인용수

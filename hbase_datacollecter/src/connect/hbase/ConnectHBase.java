@@ -30,7 +30,7 @@ public class ConnectHBase {
 	public ConnectHBase() throws IOException {
 		mkconfig();
 		mkAdmin();
-	//	deleteTable();
+		deleteTable();
 	//	System.out.println("success mkadmin");
 		createTable();
 //		System.out.println("success create Table");
@@ -42,9 +42,9 @@ public class ConnectHBase {
 
 		conf = HBaseConfiguration.create();
 		conf.clear();
-		conf.set("hbase.master", "127.0.0.1");
-		conf.set("hbase.zookeeper.quorum", "127.0.0.1");
-
+		conf.set("hbase.master", "203.255.93.191");
+		conf.set("hbase.zookeeper.quorum", "203.255.93.191");
+		conf.set("hbase.zookeeper.property.clientPort", "2181");
 	}
 
 	public static void mkAdmin() {
@@ -104,14 +104,13 @@ public class ConnectHBase {
 	void deleteTable() throws IOException{
 		System.out.println("delete Table");
 		admin.disableTable("T_PAPER_INFO");
-		System.out.println("delete T_PAPER_INFO");
         admin.deleteTable("T_PAPER_INFO");
         admin.disableTable("T_EXPERT_INFO");
         admin.deleteTable("T_EXPERT_INFO");
         admin.disableTable("T_KEYWORD_INFO");
         admin.deleteTable("T_KEYWORD_INFO");
-        admin.disableTable("T_KCIIF_INFO");
-        admin.deleteTable("T_KCIIF_INFO");
+        //admin.disableTable("T_KCIIF_INFO");
+        //admin.deleteTable("T_KCIIF_INFO");
         admin.disableTable("MT_P_SCORE");
         admin.deleteTable("MT_P_SCORE");
         admin.disableTable("T_RELATION_INFO");
@@ -123,7 +122,7 @@ public class ConnectHBase {
 	public static void createTable() throws IOException {
 		System.out.println("create table");
 	
-		if (!admin.tableExists("T_PAPER_INFO")) {
+		if (!admin.isTableAvailable("T_PAPER_INFO")) {
 			System.out.println("----------creat table number! : -----------1-");
 			HTableDescriptor H_T_TABLE = new HTableDescriptor("T_PAPER_INFO");
 			H_T_TABLE.addFamily(new HColumnDescriptor("paper_info"));
@@ -239,7 +238,7 @@ public class ConnectHBase {
 		// cht.insertExpertInfo(crdb.getNum(paper.eachAuthor(),0).get(i) +
 		// crdb.getNum(crdb.paper_keyword,
 		// 0).get(0)+timestamp(),paper.linkURL,"0");// Author_classify
-		Put put = new Put(Bytes.toBytes(transMD5(nameKeyword)));
+		Put put = new Put(Bytes.toBytes(nameKeyword));
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("title"), Bytes.toBytes(transMD5(paperId)));
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("nAuthor"), Bytes.toBytes(AuthorClassify));
 

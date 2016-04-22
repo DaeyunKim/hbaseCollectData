@@ -151,7 +151,7 @@ public class ConnectRDB {
 	}
 	public void setPaperPerYear(int[] data){
 		try {
-			String query = "insert into st_tatal_paper values(?,?)";
+			String query = "insert into st_total_paper values(?,?)";
 			PreparedStatement pstmt = null;
 			pstmt = con.prepareStatement(query);
 			int year = 2011;
