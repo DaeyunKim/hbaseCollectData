@@ -481,7 +481,7 @@ public class source {
 		Element link_ele = (Element) link_List.item(0);
 		linkurl = extractValue(link_ele.getChildNodes().item(0).toString());
 
-		paper.linkURL = linkurl;
+		paper.linkURL = linkurl.replace("http://www.dbpia.co.kr/article/", " ");
 	}
 
 	public String extractValue(String st) {

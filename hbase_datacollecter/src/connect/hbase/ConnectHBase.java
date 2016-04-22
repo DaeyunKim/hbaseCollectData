@@ -240,7 +240,7 @@ public class ConnectHBase {
 		// crdb.getNum(crdb.paper_keyword,
 		// 0).get(0)+timestamp(),paper.linkURL,"0");// Author_classify
 		Put put = new Put(Bytes.toBytes(transMD5(nameKeyword)));
-		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("title"), Bytes.toBytes(paperId));
+		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("title"), Bytes.toBytes(transMD5(paperId)));
 		put.add(Bytes.toBytes("paper_info"), Bytes.toBytes("nAuthor"), Bytes.toBytes(AuthorClassify));
 
 		table1.put(put);
