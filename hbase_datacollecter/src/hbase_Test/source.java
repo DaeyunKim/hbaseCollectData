@@ -41,21 +41,26 @@ public class source {
 	int today_year = today.get(Calendar.YEAR);
 	UseOntology uo = new UseOntology();// ontology keywords
 	String keyword[] = { "영상처리", "인공지능", "자연어처리", "소셜", "빅데이터", "네트워크" };
-	
-	//keyword,year,count
-	
+	HashMap<String, int[]> keywordCount = new HashMap<String, int[]>();
+	// keyword,year,count
+	int year_count[];// allocate each keyword 0:2011 ~5: 2016
+
 	public source() throws IOException, ParserConfigurationException, SAXException {
 
 		// System.out.println("검색어");
-		// for(String keyword:keyword){
-
-		number = 0;
-		getData("인공지능");
-		// getData();
-		System.out.println("총 갯수 : " + number + " keyword : " + keyword + " 페이지수 : " + (pageNumber - 1));
-
-		// }
-
+		for (String keyword : keyword) {
+			year_count = new int[6];// allocate each keyword 0:2011 ~5: 2016
+			number = 0;
+			getData(keyword);
+			// getData();
+			System.out.println("총 갯수 : " + number + " keyword : " + keyword + " 페이지수 : " + (pageNumber - 1));
+			
+			keywordCount.put(keyword, year_count);
+			
+		}
+		System.out.println("keyword Count 2011: "+keywordCount.get("영상처리")[0]);
+		
+		
 		crdb.close();
 	}
 
@@ -104,11 +109,11 @@ public class source {
 				System.out.println("2page stop n : " + n + " itemNodeList.getLength() : " + itemNodeList.getLength());
 
 			}
-			System.out.println("page stop" );
+			System.out.println("page stop");
 		}
-		System.out.println("flush1 stop" );
+		System.out.println("flush1 stop");
 		cht.exeFlushcommit();
-		System.out.println("flush2 stop" );
+		System.out.println("flush2 stop");
 	}
 
 	public void getDocument(InputStream str, URL url) throws ParserConfigurationException, IOException, SAXException {
@@ -133,7 +138,7 @@ public class source {
 		System.out.println("item  : " + itemNodeList.getLength());
 
 		for (int i = 0; i < itemNodeList.getLength(); i++) {
-			
+
 			paperInfo paper = new paperInfo(keyword);
 			Node itemNode = itemNodeList.item(i);
 			if (itemNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -226,22 +231,40 @@ public class source {
 				cht.insertCountRelation(temp_author);
 				// FIX ME count keyword, count paper
 
-				//cht.insertKeywordInfo(keyword, paper.linkURL);
+				// cht.insertKeywordInfo(keyword, paper.linkURL);
 
 				// 입력받아야됨
 				// cht.insertKCIIF(paper.publisher_name, "score");
 				// cht.insertPScore("paper.linkURL", "score");
 
 				// calculate P_SCORE
-				// System.out.println("paper.Issue_date : "+paper.Issue_date);
 				String hyear = paper.Issue_date.substring(0, 4).trim();
-				Integer.parseInt(hyear);// paper Year
+				int hyear_i = Integer.parseInt(hyear);// paper Year
 				System.out.println("paper IssueDate : " + hyear + " currentYear : " + today_year);
-				int n_diff = today_year - Integer.parseInt(hyear);
-				// currentYear
-
+				int n_diff = today_year - hyear_i;
 				float score = (float) (1 / (Math.log(2 + n_diff)));
-				cht.insertPScore(paper.linkURL,score);// edit 20160421
+
+				switch (hyear_i) {
+				case 2011:
+					year_count[0]++;
+					break;
+				case 2012:
+					year_count[1]++;
+					break;
+				case 2013:
+					year_count[2]++;
+					break;
+				case 2014:
+					year_count[3]++;
+					break;
+				case 2015:
+					year_count[4]++;
+					break;
+				case 2016:
+					year_count[5]++;
+					break;
+				}
+				cht.insertPScore(paper.linkURL, score);// edit 20160421
 
 				// 이부분 인용수
 				cht.insertPaperCitationInfo(paper.linkURL, "nCitation", "Citation_year");
@@ -251,6 +274,34 @@ public class source {
 			// System.out.println("Author Size: " + paper.author.size());
 
 		}
+
+	}
+
+	public void countNumber(String keyword, int year) {
+		int count[] = new int[6];// allocate each keyword 0:2011 ~5: 2016
+
+		switch (year) {
+		case 2011:
+			count[0]++;
+			break;
+		case 2012:
+			count[1]++;
+			break;
+		case 2013:
+			count[2]++;
+			break;
+		case 2014:
+			count[3]++;
+			break;
+		case 2015:
+			count[4]++;
+			break;
+		case 2016:
+			count[5]++;
+			break;
+
+		}
+		keywordCount.put(keyword, count);
 
 	}
 

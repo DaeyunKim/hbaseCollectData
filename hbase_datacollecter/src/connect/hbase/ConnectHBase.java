@@ -270,7 +270,7 @@ public class ConnectHBase {
 		try{
 			Put put5 = new Put(Bytes.toBytes(transMD5(paperId)));
 
-			put5.add(Bytes.toBytes("pscroe"), Bytes.toBytes("score"), Bytes.toBytes(score));
+			put5.add(Bytes.toBytes("pscore"), Bytes.toBytes("score"), Bytes.toBytes(score));
 			System.out.println("input  pscroe"+score);
 			table5.put(put5);
 			
