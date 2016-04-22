@@ -149,7 +149,23 @@ public class ConnectRDB {
 		}
 		
 	}
-	
+	public void setPaperPerYear(int[] data){
+		try {
+			String query = "insert into st_tatal_paper values(?,?)";
+			PreparedStatement pstmt = null;
+			pstmt = con.prepareStatement(query);
+			int year = 2011;
+			for(int i=0; i<data.length; i++,year++){
+				pstmt.setInt(1, year);	
+				pstmt.setInt(2, data[i]);
+				pstmt.executeUpdate();
+			}			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+	}
 	/*
 	public static void main(String[] args) {
 		ConnectRDB ps = new ConnectRDB();

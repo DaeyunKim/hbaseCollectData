@@ -68,7 +68,7 @@ public class source {
 					
 			
 		}
-		
+		crdb.setPaperPerYear(sum_count);
 		for(int s:sum_count){
 			
 			System.out.println("each year sum paper : "+s);
@@ -118,18 +118,18 @@ public class source {
 			// "+itemNodeList.getLength());
 			int n = itemNodeList.getLength();
 			if (n != 0) {
-				System.out.println("1page stop n : " + n + " itemNodeList.getLength() : " + itemNodeList.getLength());
+				//System.out.println("1page stop n : " + n + " itemNodeList.getLength() : " + itemNodeList.getLength());
 				getItemData(doc, keyword);
 			} else {
 
-				System.out.println("2page stop n : " + n + " itemNodeList.getLength() : " + itemNodeList.getLength());
+			//	System.out.println("2page stop n : " + n + " itemNodeList.getLength() : " + itemNodeList.getLength());
 
 			}
 			System.out.println("page stop");
 		}
-		System.out.println("flush1 stop");
+//		System.out.println("flush1 stop");
 		cht.exeFlushcommit();
-		System.out.println("flush2 stop");
+//		System.out.println("flush2 stop");
 	}
 
 	public void getDocument(InputStream str, URL url) throws ParserConfigurationException, IOException, SAXException {
