@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ConnectRDB {
 	
@@ -126,6 +127,29 @@ public class ConnectRDB {
 			ex.printStackTrace();
 		}
 	}
+	
+	public void setKeywordPerYear(HashMap<String, int[]> data){
+		try {
+			String query = "insert into st_keyword_paper values(?,?,?)";
+			PreparedStatement pstmt = null;
+			pstmt = con.prepareStatement(query);
+			for( String key : data.keySet()){
+				pstmt.setString(1,key);
+				int[] temp = data.get(key);
+				int year = 2011;
+				for(int i=0; i<temp.length; i++,year++){
+					pstmt.setInt(2, year);	
+					pstmt.setInt(3, temp[i]);
+					pstmt.executeUpdate();
+				}
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
 	/*
 	public static void main(String[] args) {
 		ConnectRDB ps = new ConnectRDB();

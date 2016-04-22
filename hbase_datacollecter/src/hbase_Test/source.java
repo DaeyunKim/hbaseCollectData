@@ -40,10 +40,11 @@ public class source {
 	Calendar today = Calendar.getInstance();
 	int today_year = today.get(Calendar.YEAR);
 	UseOntology uo = new UseOntology();// ontology keywords
-	String keyword[] = { "영상처리", "인공지능", "자연어처리", "소셜", "빅데이터", "네트워크" };
+	String keyword[] = { "영상처리", "인공지능", "자연어처리", "소셜", "빅데이터", "네트워크" ,"정보보안","데이터베이스","센서","온톨로지","클라우드","프로그래밍언어"};
 	HashMap<String, int[]> keywordCount = new HashMap<String, int[]>();
 	// keyword,year,count
 	int year_count[];// allocate each keyword 0:2011 ~5: 2016
+	int sum_count[] = new int [6];
 
 	public source() throws IOException, ParserConfigurationException, SAXException {
 
@@ -57,8 +58,23 @@ public class source {
 			
 			keywordCount.put(keyword, year_count);
 			
+			for(int i=0;i<6;i++){
+				
+				sum_count[i]+=year_count[i];
+				
+			}
+			
+			crdb.setKeywordPerYear(keywordCount);
+					
+			
 		}
-		System.out.println("keyword Count 2011: "+keywordCount.get("영상처리")[0]);
+		
+		for(int s:sum_count){
+			
+			System.out.println("each year sum paper : "+s);
+			
+		}
+		//System.out.println("keyword Count 2011: "+keywordCount.get("영상처리")[0]);
 		
 		
 		crdb.close();
@@ -90,7 +106,7 @@ public class source {
 		System.out.println("Auto flush: " + cht.table.isAutoFlush());
 
 		// pageNumber(doc) page number
-		for (pageNumber = 1; pageNumber < 1 + 1; pageNumber++) {
+		for (pageNumber = 1; pageNumber < pageNumber(doc) + 1; pageNumber++) {
 
 			String url_page = searchUrl + "&pagenumber=" + pageNumber;
 			url = new URL(url_page);
