@@ -1,1972 +1,1048 @@
-<?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
-<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.w3.org/2002/07/owl"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://netdb/#ADHOC -->
-
-    <Class rdf:about="http://netdb/#ADHOC">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#ARTIFICIAL -->
-
-    <Class rdf:about="http://netdb/#ARTIFICIAL">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#ASSEMBLY -->
-
-    <Class rdf:about="http://netdb/#ASSEMBLY">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#ATM -->
-
-    <Class rdf:about="http://netdb/#ATM">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#BIGDATA -->
-
-    <Class rdf:about="http://netdb/#BIGDATA">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#C -->
-
-    <Class rdf:about="http://netdb/#C">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#CHILL -->
-
-    <Class rdf:about="http://netdb/#CHILL">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#CLOUD -->
-
-    <Class rdf:about="http://netdb/#CLOUD">
-        <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#CLUSTER -->
-
-    <Class rdf:about="http://netdb/#CLUSTER">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#COLOR -->
-
-    <Class rdf:about="http://netdb/#COLOR">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#COMPUTING -->
-
-    <Class rdf:about="http://netdb/#COMPUTING">
-        <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#DATABASE -->
-
-    <Class rdf:about="http://netdb/#DATABASE">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#DATABASES -->
-
-    <Class rdf:about="http://netdb/#DATABASES">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#DB -->
-
-    <Class rdf:about="http://netdb/#DB">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#DBMS -->
-
-    <Class rdf:about="http://netdb/#DBMS">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#ETHERNET -->
-
-    <Class rdf:about="http://netdb/#ETHERNET">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#FACEBOOK -->
-
-    <Class rdf:about="http://netdb/#FACEBOOK">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#FUZZY -->
-
-    <Class rdf:about="http://netdb/#FUZZY">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#GML -->
-
-    <Class rdf:about="http://netdb/#GML">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#HADOOP -->
-
-    <Class rdf:about="http://netdb/#HADOOP">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#HOC -->
-
-    <Class rdf:about="http://netdb/#HOC">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#IMAGE -->
-
-    <Class rdf:about="http://netdb/#IMAGE">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#INTELLIGENCE -->
-
-    <Class rdf:about="http://netdb/#INTELLIGENCE">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#IPV6 -->
-
-    <Class rdf:about="http://netdb/#IPV6">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#ISOIEC -->
-
-    <Class rdf:about="http://netdb/#ISOIEC">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#JAVA -->
-
-    <Class rdf:about="http://netdb/#JAVA">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#JXTA -->
-
-    <Class rdf:about="http://netdb/#JXTA">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#LANGUAGE -->
-
-    <Class rdf:about="http://netdb/#LANGUAGE">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#MAC -->
-
-    <Class rdf:about="http://netdb/#MAC">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#MANET -->
-
-    <Class rdf:about="http://netdb/#MANET">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#MAP -->
-
-    <Class rdf:about="http://netdb/#MAP">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#MAPREDUCE -->
-
-    <Class rdf:about="http://netdb/#MAPREDUCE">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#MMDBMS -->
-
-    <Class rdf:about="http://netdb/#MMDBMS">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#MOBILE -->
-
-    <Class rdf:about="http://netdb/#MOBILE">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#MOTION -->
-
-    <Class rdf:about="http://netdb/#MOTION">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#MPTCP -->
-
-    <Class rdf:about="http://netdb/#MPTCP">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#NETWORK -->
-
-    <Class rdf:about="http://netdb/#NETWORK">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#NETWORKING -->
-
-    <Class rdf:about="http://netdb/#NETWORKING">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#NETWORKS -->
-
-    <Class rdf:about="http://netdb/#NETWORKS">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#NEURAL -->
-
-    <Class rdf:about="http://netdb/#NEURAL">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#ONTOLOGY -->
-
-    <Class rdf:about="http://netdb/#ONTOLOGY">
-        <rdfs:subClassOf rdf:resource="http://netdb/#온톨로지"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#OODBMS -->
-
-    <Class rdf:about="http://netdb/#OODBMS">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#ORDBMS -->
-
-    <Class rdf:about="http://netdb/#ORDBMS">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#OWL -->
-
-    <Class rdf:about="http://netdb/#OWL">
-        <rdfs:subClassOf rdf:resource="http://netdb/#온톨로지"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#P2P -->
-
-    <Class rdf:about="http://netdb/#P2P">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#P2P기반 -->
-
-    <Class rdf:about="http://netdb/#P2P기반">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#PATTERN -->
-
-    <Class rdf:about="http://netdb/#PATTERN">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#PEER -->
-
-    <Class rdf:about="http://netdb/#PEER">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#PEERTOPEER -->
-
-    <Class rdf:about="http://netdb/#PEERTOPEER">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#PYTHON -->
-
-    <Class rdf:about="http://netdb/#PYTHON">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#QOS -->
-
-    <Class rdf:about="http://netdb/#QOS">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#R -->
-
-    <Class rdf:about="http://netdb/#R">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#RDB -->
-
-    <Class rdf:about="http://netdb/#RDB">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#RDBMS -->
-
-    <Class rdf:about="http://netdb/#RDBMS">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#RDF -->
-
-    <Class rdf:about="http://netdb/#RDF">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-        <rdfs:subClassOf rdf:resource="http://netdb/#온톨로지"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#RECOGNITION -->
-
-    <Class rdf:about="http://netdb/#RECOGNITION">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#REDUCE -->
-
-    <Class rdf:about="http://netdb/#REDUCE">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#ROUTING -->
-
-    <Class rdf:about="http://netdb/#ROUTING">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#RTCP -->
-
-    <Class rdf:about="http://netdb/#RTCP">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SCTP -->
-
-    <Class rdf:about="http://netdb/#SCTP">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SDN -->
-
-    <Class rdf:about="http://netdb/#SDN">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SECURE -->
-
-    <Class rdf:about="http://netdb/#SECURE">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SECURITY -->
-
-    <Class rdf:about="http://netdb/#SECURITY">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SENSOR -->
-
-    <Class rdf:about="http://netdb/#SENSOR">
-        <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SMARTPHONE -->
-
-    <Class rdf:about="http://netdb/#SMARTPHONE">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SNS -->
-
-    <Class rdf:about="http://netdb/#SNS">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SNSSOCIAL -->
-
-    <Class rdf:about="http://netdb/#SNSSOCIAL">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SPARK -->
-
-    <Class rdf:about="http://netdb/#SPARK">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SQL -->
-
-    <Class rdf:about="http://netdb/#SQL">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#STORM -->
-
-    <Class rdf:about="http://netdb/#STORM">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SURFACE -->
-
-    <Class rdf:about="http://netdb/#SURFACE">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SWICH -->
-
-    <Class rdf:about="http://netdb/#SWICH">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#SWITCHING -->
-
-    <Class rdf:about="http://netdb/#SWITCHING">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#TCP -->
-
-    <Class rdf:about="http://netdb/#TCP">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#TCPIP -->
-
-    <Class rdf:about="http://netdb/#TCPIP">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#TWITTER -->
-
-    <Class rdf:about="http://netdb/#TWITTER">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#UML -->
-
-    <Class rdf:about="http://netdb/#UML">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#UPNP -->
-
-    <Class rdf:about="http://netdb/#UPNP">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#USN -->
-
-    <Class rdf:about="http://netdb/#USN">
-        <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#VIDEO -->
-
-    <Class rdf:about="http://netdb/#VIDEO">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#VOICEXML -->
-
-    <Class rdf:about="http://netdb/#VOICEXML">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#VOIP -->
-
-    <Class rdf:about="http://netdb/#VOIP">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#WDM -->
-
-    <Class rdf:about="http://netdb/#WDM">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#WIFI -->
-
-    <Class rdf:about="http://netdb/#WIFI">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#WIRELESS -->
-
-    <Class rdf:about="http://netdb/#WIRELESS">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#WSN -->
-
-    <Class rdf:about="http://netdb/#WSN">
-        <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#XML -->
-
-    <Class rdf:about="http://netdb/#XML">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#XMLEDI -->
-
-    <Class rdf:about="http://netdb/#XMLEDI">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#XML기반 -->
-
-    <Class rdf:about="http://netdb/#XML기반">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#XPATH -->
-
-    <Class rdf:about="http://netdb/#XPATH">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#XQUERY -->
-
-    <Class rdf:about="http://netdb/#XQUERY">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#ZIGBEE -->
-
-    <Class rdf:about="http://netdb/#ZIGBEE">
-        <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#ebXML -->
-
-    <Class rdf:about="http://netdb/#ebXML">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#가상머신 -->
-
-    <Class rdf:about="http://netdb/#가상머신">
-        <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#가상화 -->
-
-    <Class rdf:about="http://netdb/#가상화">
-        <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#강화학습 -->
-
-    <Class rdf:about="http://netdb/#강화학습">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#개인정보 -->
-
-    <Class rdf:about="http://netdb/#개인정보">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#개인정보보호 -->
-
-    <Class rdf:about="http://netdb/#개인정보보호">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#객체 -->
-
-    <Class rdf:about="http://netdb/#객체">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#객체지향 -->
-
-    <Class rdf:about="http://netdb/#객체지향">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#검색 -->
-
-    <Class rdf:about="http://netdb/#검색">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#공간빅데이터 -->
-
-    <Class rdf:about="http://netdb/#공간빅데이터">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#관계형 -->
-
-    <Class rdf:about="http://netdb/#관계형">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#광대역 -->
-
-    <Class rdf:about="http://netdb/#광대역">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#구문 -->
-
-    <Class rdf:about="http://netdb/#구문">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#내용기반 -->
-
-    <Class rdf:about="http://netdb/#내용기반">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#네트워크 -->
-
-    <Class rdf:about="http://netdb/#네트워크">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#네트워크기반 -->
-
-    <Class rdf:about="http://netdb/#네트워크기반">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#네트워킹 -->
-
-    <Class rdf:about="http://netdb/#네트워킹">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#노드 -->
-
-    <Class rdf:about="http://netdb/#노드">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#대역폭 -->
-
-    <Class rdf:about="http://netdb/#대역폭">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#대화형 -->
-
-    <Class rdf:about="http://netdb/#대화형">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#데이타베이스 -->
-
-    <Class rdf:about="http://netdb/#데이타베이스">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#데이터베이스 -->
-
-    <Class rdf:about="http://netdb/#데이터베이스">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#데이터베이스시스템 -->
-
-    <Class rdf:about="http://netdb/#데이터베이스시스템">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#라우터 -->
-
-    <Class rdf:about="http://netdb/#라우터">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#라우팅 -->
-
-    <Class rdf:about="http://netdb/#라우팅">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-        <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#레코드 -->
-
-    <Class rdf:about="http://netdb/#레코드">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#말뭉치 -->
-
-    <Class rdf:about="http://netdb/#말뭉치">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#망 -->
-
-    <Class rdf:about="http://netdb/#망">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#맵리듀스 -->
-
-    <Class rdf:about="http://netdb/#맵리듀스">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#멀티홉 -->
-
-    <Class rdf:about="http://netdb/#멀티홉">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#메타데이터 -->
-
-    <Class rdf:about="http://netdb/#메타데이터">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#모델링 -->
-
-    <Class rdf:about="http://netdb/#모델링">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#무선 -->
-
-    <Class rdf:about="http://netdb/#무선">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#무선랜 -->
-
-    <Class rdf:about="http://netdb/#무선랜">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#무선센서 -->
-
-    <Class rdf:about="http://netdb/#무선센서">
-        <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#무선센서네트워크 -->
-
-    <Class rdf:about="http://netdb/#무선센서네트워크">
-        <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#문자 -->
-
-    <Class rdf:about="http://netdb/#문자">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#번호판 -->
-
-    <Class rdf:about="http://netdb/#번호판">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안 -->
-
-    <Class rdf:about="http://netdb/#보안">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안관리 -->
-
-    <Class rdf:about="http://netdb/#보안관리">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안관제 -->
-
-    <Class rdf:about="http://netdb/#보안관제">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안기능 -->
-
-    <Class rdf:about="http://netdb/#보안기능">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안기술 -->
-
-    <Class rdf:about="http://netdb/#보안기술">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안성 -->
-
-    <Class rdf:about="http://netdb/#보안성">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안시스템 -->
-
-    <Class rdf:about="http://netdb/#보안시스템">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안요구사항 -->
-
-    <Class rdf:about="http://netdb/#보안요구사항">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안운영체제 -->
-
-    <Class rdf:about="http://netdb/#보안운영체제">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안위협 -->
-
-    <Class rdf:about="http://netdb/#보안위협">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보안정책 -->
-
-    <Class rdf:about="http://netdb/#보안정책">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#보호 -->
-
-    <Class rdf:about="http://netdb/#보호">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#분산 -->
-
-    <Class rdf:about="http://netdb/#분산">
-        <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#분석기 -->
-
-    <Class rdf:about="http://netdb/#분석기">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#블로그 -->
-
-    <Class rdf:about="http://netdb/#블로그">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#비젼 -->
-
-    <Class rdf:about="http://netdb/#비젼">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#빅데이터 -->
-
-    <Class rdf:about="http://netdb/#빅데이터">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#사이버보안 -->
-
-    <Class rdf:about="http://netdb/#사이버보안">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#사전 -->
-
-    <Class rdf:about="http://netdb/#사전">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#색인 -->
-
-    <Class rdf:about="http://netdb/#색인">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#색인구조 -->
-
-    <Class rdf:about="http://netdb/#색인구조">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#센서 -->
-
-    <Class rdf:about="http://netdb/#센서"/>
-    
-
-
-    <!-- http://netdb/#센서네트워크 -->
-
-    <Class rdf:about="http://netdb/#센서네트워크">
-        <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#센서노드 -->
-
-    <Class rdf:about="http://netdb/#센서노드">
-        <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#소셜 -->
-
-    <Class rdf:about="http://netdb/#소셜">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#소셜네트워크 -->
-
-    <Class rdf:about="http://netdb/#소셜네트워크">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#소셜네트워크서비스 -->
-
-    <Class rdf:about="http://netdb/#소셜네트워크서비스">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#소셜미디어 -->
-
-    <Class rdf:about="http://netdb/#소셜미디어">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#소셜커머스 -->
-
-    <Class rdf:about="http://netdb/#소셜커머스">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#소프트웨어 -->
-
-    <Class rdf:about="http://netdb/#소프트웨어">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#스마트폰 -->
-
-    <Class rdf:about="http://netdb/#스마트폰">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#스위치 -->
-
-    <Class rdf:about="http://netdb/#스위치">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#스키마 -->
-
-    <Class rdf:about="http://netdb/#스키마">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#시계열 -->
-
-    <Class rdf:about="http://netdb/#시계열">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#시맨틱 -->
-
-    <Class rdf:about="http://netdb/#시맨틱">
-        <rdfs:subClassOf rdf:resource="http://netdb/#온톨로지"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#신경 -->
-
-    <Class rdf:about="http://netdb/#신경">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#신경망 -->
-
-    <Class rdf:about="http://netdb/#신경망">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#신경회로망 -->
-
-    <Class rdf:about="http://netdb/#신경회로망">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#안테나 -->
-
-    <Class rdf:about="http://netdb/#안테나">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#어셈블리 -->
-
-    <Class rdf:about="http://netdb/#어셈블리">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#언어 -->
-
-    <Class rdf:about="http://netdb/#언어">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#얼굴 -->
-
-    <Class rdf:about="http://netdb/#얼굴">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#에이전트 -->
-
-    <Class rdf:about="http://netdb/#에이전트">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#영상기반 -->
-
-    <Class rdf:about="http://netdb/#영상기반">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#영상복원 -->
-
-    <Class rdf:about="http://netdb/#영상복원">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#영상처리 -->
-
-    <Class rdf:about="http://netdb/#영상처리">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#영상처리기법 -->
-
-    <Class rdf:about="http://netdb/#영상처리기법">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#영상처리기술 -->
-
-    <Class rdf:about="http://netdb/#영상처리기술">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#영상처리시스템 -->
-
-    <Class rdf:about="http://netdb/#영상처리시스템">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#영상처리용 -->
-
-    <Class rdf:about="http://netdb/#영상처리용">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#온톨로지 -->
-
-    <Class rdf:about="http://netdb/#온톨로지">
-        <rdfs:subClassOf rdf:resource="http://netdb/#온톨로지"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#워터마킹 -->
-
-    <Class rdf:about="http://netdb/#워터마킹">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#위성영상 -->
-
-    <Class rdf:about="http://netdb/#위성영상">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#유무선 -->
-
-    <Class rdf:about="http://netdb/#유무선">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#유비쿼터스 -->
-
-    <Class rdf:about="http://netdb/#유비쿼터스">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#의료영상 -->
-
-    <Class rdf:about="http://netdb/#의료영상">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#의미 -->
-
-    <Class rdf:about="http://netdb/#의미">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#이더넷 -->
-
-    <Class rdf:about="http://netdb/#이더넷">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#이동 -->
-
-    <Class rdf:about="http://netdb/#이동">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#이동컴퓨팅 -->
-
-    <Class rdf:about="http://netdb/#이동컴퓨팅">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#이동통신 -->
-
-    <Class rdf:about="http://netdb/#이동통신">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#이동형 -->
-
-    <Class rdf:about="http://netdb/#이동형">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#인공신경망 -->
-
-    <Class rdf:about="http://netdb/#인공신경망">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#인공지능 -->
-
-    <Class rdf:about="http://netdb/#인공지능">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#인공지능기법 -->
-
-    <Class rdf:about="http://netdb/#인공지능기법">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#인공지능형 -->
-
-    <Class rdf:about="http://netdb/#인공지능형">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#인덱싱 -->
-
-    <Class rdf:about="http://netdb/#인덱싱">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#인식 -->
-
-    <Class rdf:about="http://netdb/#인식">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#인터넷 -->
-
-    <Class rdf:about="http://netdb/#인터넷">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#자바 -->
-
-    <Class rdf:about="http://netdb/#자바">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#자연어처리 -->
-
-    <Class rdf:about="http://netdb/#자연어처리">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#전송 -->
-
-    <Class rdf:about="http://netdb/#전송">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#전송률 -->
-
-    <Class rdf:about="http://netdb/#전송률">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#정보 -->
-
-    <Class rdf:about="http://netdb/#정보">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#정보검색 -->
-
-    <Class rdf:about="http://netdb/#정보검색">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#정보보안 -->
-
-    <Class rdf:about="http://netdb/#정보보안">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#정보보호 -->
-
-    <Class rdf:about="http://netdb/#정보보호">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#지능 -->
-
-    <Class rdf:about="http://netdb/#지능">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#지능형 -->
-
-    <Class rdf:about="http://netdb/#지능형">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#질의 -->
-
-    <Class rdf:about="http://netdb/#질의">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#질의어 -->
-
-    <Class rdf:about="http://netdb/#질의어">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#질의처리 -->
-
-    <Class rdf:about="http://netdb/#질의처리">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#카메라 -->
-
-    <Class rdf:about="http://netdb/#카메라">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#컴파일러 -->
-
-    <Class rdf:about="http://netdb/#컴파일러">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#컴퓨팅 -->
-
-    <Class rdf:about="http://netdb/#컴퓨팅">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-        <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#클라우드 -->
-
-    <Class rdf:about="http://netdb/#클라우드">
-        <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#클라우드컴퓨팅 -->
-
-    <Class rdf:about="http://netdb/#클라우드컴퓨팅">
-        <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#클러스터 -->
-
-    <Class rdf:about="http://netdb/#클러스터">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-        <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#토폴로지 -->
-
-    <Class rdf:about="http://netdb/#토폴로지">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#통신 -->
-
-    <Class rdf:about="http://netdb/#통신">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#통신망 -->
-
-    <Class rdf:about="http://netdb/#통신망">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#통합데이터베이스 -->
-
-    <Class rdf:about="http://netdb/#통합데이터베이스">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#트랜잭션 -->
-
-    <Class rdf:about="http://netdb/#트랜잭션">
-        <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#트위터 -->
-
-    <Class rdf:about="http://netdb/#트위터">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#파이썬 -->
-
-    <Class rdf:about="http://netdb/#파이썬">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#퍼지 -->
-
-    <Class rdf:about="http://netdb/#퍼지">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#페이스북 -->
-
-    <Class rdf:about="http://netdb/#페이스북">
-        <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#품사 -->
-
-    <Class rdf:about="http://netdb/#품사">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#프로그래밍 -->
-
-    <Class rdf:about="http://netdb/#프로그래밍">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#프로그래밍언어 -->
-
-    <Class rdf:about="http://netdb/#프로그래밍언어">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#프로그램 -->
-
-    <Class rdf:about="http://netdb/#프로그램">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#하둡 -->
-
-    <Class rdf:about="http://netdb/#하둡">
-        <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
-        <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#한글 -->
-
-    <Class rdf:about="http://netdb/#한글">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#헬스케어 -->
-
-    <Class rdf:about="http://netdb/#헬스케어">
-        <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#형태소 -->
-
-    <Class rdf:about="http://netdb/#형태소">
-        <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#홈네트워크 -->
-
-    <Class rdf:about="http://netdb/#홈네트워크">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#홉 -->
-
-    <Class rdf:about="http://netdb/#홉">
-        <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#2D -->
-
-    <Class rdf:about="http://netdb/#2D">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#3D -->
-
-    <Class rdf:about="http://netdb/#3D">
-        <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#C++ -->
-
-    <Class rdf:about="http://netdb/#C++">
-        <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
-    </Class>
-    
-
-
-    <!-- http://netdb/#JTC1/SC27 -->
-
-    <Class rdf:about="http://netdb/#JTC1/SC27">
-        <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
-    </Class>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#인공지능 -->
-
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#인공지능"/>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:about="http://netdb/#보안기능">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#정보보안"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#안테나">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ARTIFICIAL">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#인공진능"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#인공지능형">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#UML">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ADHOC">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#전송률">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#색인구조">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#RDB">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#IMAGE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#무선센서네트워크">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#센서"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SNS">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#소셜"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#가상화">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#클라우드"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#JTC1/SC27">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#정보보안"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SWICH">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#MMDBMS">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#컴퓨팅">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#클라우드"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#NETWORK">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#하둡">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#클라우드"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#빅데이터"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#JAVA">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#빅데이터">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#무선센서">
+    <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#멀티홉">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#객체">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SWITCHING">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#에이전트">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보안시스템">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#정보보안"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SCTP">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#영상처리용">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#신경회로망">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#무선">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#인공지능">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#MOBILE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#RDBMS">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#C++">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ASSEMBLY">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#TWITTER">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#소셜"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#HOC">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#영상처리기술">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#FUZZY">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ONTOLOGY">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#온톨로지"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보안기술">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#정보보안"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SURFACE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#영상기반">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#INTELLIGENCE">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#TCPIP">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#내용기반">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#DBMS">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#지능형">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#프로그램">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#2D">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#트랜잭션">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#이동컴퓨팅">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ZIGBEE">
+    <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보안성">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#정보보안"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#객체지향">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#위성영상">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SDN">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#전송">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#WIRELESS">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#개인정보보호">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#정보보안"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#라우터">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#PEERTOPEER">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#영상처리기법">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#WSN">
+    <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#스키마">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#레코드">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#신경망">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보안운영체제">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#정보보안"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#맵리듀스">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#스위치">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#구문">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#사이버보안">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#정보보안"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#통합데이터베이스">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#NETWORKING">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#대화형">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#노드">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#OODBMS">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#통신">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#지능">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#RECOGNITION">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#파이썬">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#P2P기반">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#DATABASES">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#센서네트워크">
+    <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#이동">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#메타데이터">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#공간빅데이터">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SECURE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#정보보안"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#클라우드컴퓨팅">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#클라우드"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ROUTING">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#CHILL">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#토폴로지">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보안관제">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#정보보안"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#무선랜">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ETHERNET">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#XPATH">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#의료영상">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#HADOOP">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#소셜커머스">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#소셜"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#카메라">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#OWL">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#온톨로지"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#센서노드">
+    <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#XML">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#MOTION">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#품사">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#VIDEO">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#데이타베이스">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#FACEBOOK">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#소셜"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#P2P">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#인공신경망">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#정보보안">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보안">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SECURITY">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#영상처리시스템">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#말뭉치">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ISOIEC">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#이동통신">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#시계열">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보안위협">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#문자">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#질의">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#홈네트워크">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SMARTPHONE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#소셜"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#유무선">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#광대역">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#블로그">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#소셜"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#모델링">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#COMPUTING">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#클라우드"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#분산">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#클라우드"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#분석기">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#질의어">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#COLOR">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#네트워크기반">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#MAC">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#번호판">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#통신망">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#QOS">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보안요구사항">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#인덱싱">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#DATABASE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#WDM">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#정보검색">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#얼굴">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#영상처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#JXTA">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#VOICEXML">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#RTCP">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ATM">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#신경">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#홉">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#인식">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#소프트웨어">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#이더넷">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#사전">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#소셜미디어">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#소셜"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#영상처리">
+    <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#WIFI">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#네트워킹">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#MPTCP">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#라우팅">
+    <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#온톨로지">
+    <rdfs:subClassOf rdf:resource="http://netdb/#온톨로지"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#PATTERN">
+    <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#USN">
+    <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#LANGUAGE">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#인공지능기법">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보안관리">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#컴파일러">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#BIGDATA">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SENSOR">
+    <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#대역폭">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#이동형">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#GML">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#데이터베이스"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#클라우드">
+    <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#데이터베이스">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#자바">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#색인">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#CLUSTER">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#PEER">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#형태소">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SPARK">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#퍼지">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#PYTHON">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#C">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#프로그래밍언어"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#관계형">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#헬스케어">
+    <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#데이터베이스시스템">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#유비쿼터스">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#RDF">
+    <rdfs:subClassOf rdf:resource="http://netdb/#온톨로지"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#클러스터">
+    <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#영상복원">
+    <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보안정책">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#R">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#TCP">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#CLOUD">
+    <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#REDUCE">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#UPNP">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#네트워크"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#네트워크">
+    <rdfs:subClassOf rdf:resource="http://netdb/#센서"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ORDBMS">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#3D">
+    <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#프로그래밍언어">
+    <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#강화학습">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#MAP">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#STORM">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#소셜네트워크서비스">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#소셜"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#트위터">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#소셜"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#어셈블리">
+    <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#정보보호">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#검색">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#DB">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#XML기반">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#MAPREDUCE">
+    <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#MANET">
+    <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SNSSOCIAL">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#소셜"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#질의처리">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#IPV6">
+    <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#소셜">
+    <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#페이스북">
+    <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#망">
+    <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#VOIP">
+    <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#XMLEDI">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#워터마킹">
+    <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#보호">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#의미">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#정보">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#가상머신">
+    <rdfs:subClassOf rdf:resource="http://netdb/#클라우드"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#ebXML">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#비젼">
+    <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#NEURAL">
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#한글">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#자연어처리"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#개인정보">
+    <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#프로그래밍">
+    <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#스마트폰">
+    <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#SQL">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#NETWORKS">
+    <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#XQUERY">
+    <rdfs:subClassOf rdf:resource="http://netdb/#데이터베이스"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#인터넷">
+    <rdfs:subClassOf rdf:resource="http://netdb/#네트워크"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#자연어처리">
+    <rdfs:subClassOf rdf:resource="http://netdb/#자연어처리"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#시맨틱">
+    <rdfs:subClassOf rdf:resource="http://netdb/#온톨로지"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#언어">
+    <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://netdb/#소셜네트워크">
+    <rdfs:subClassOf rdf:resource="http://netdb/#소셜"/>
+  </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
-

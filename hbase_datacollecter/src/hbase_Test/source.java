@@ -28,7 +28,7 @@ public class source {
 	int count = 0;
 	Document doc = null;
 	String add1 = "http://api.dbpia.co.kr/v1/search/search.xml?pyear=3&pyear_start=2011&category=4&pyear_end=2016&key=8cdcafebb30f172422d40f954d1cd40d&target=se_adv&searchall=";
-	int number = 0;
+
 	int pageNumber = 1;
 	int categoryNum = 1;
 	int authorURL = 0;
@@ -40,7 +40,7 @@ public class source {
 	Calendar today = Calendar.getInstance();
 	int today_year = today.get(Calendar.YEAR);
 	UseOntology uo = new UseOntology();// ontology keywords
-	String searchkeyword[] = { "영상처리", "인공지능", "자연어처리", "소셜", "빅데이터", "네트워크", "정보보안", "데이터베이스", "센서", "온톨로지", "클라우드",
+	String searchkeyword[] = { "영상처리", "인공능", "자연어처리", "소셜", "빅데이터", "네트워크", "정보보안", "데이터베이스", "센서", "온톨로지", "클라우드",
 			"프로그래밍언어" };
 	HashMap<String, int[]> keywordCount = new HashMap<String, int[]>();
 	// keyword,year,count
@@ -51,25 +51,30 @@ public class source {
 
 		// System.out.println("검색어");
 		year_count = new int[12][6];// allocate each keyword 0:2011 ~5: 2016
-		// for (String keyword : keyword) {
+		int kewordnumber[] = new int[12];
+	//	// for (String keyword : keyword) {
 		for (int i = 0; i < searchkeyword.length; i++) {
-			number = 0;
+			
 			getData(searchkeyword[i]);
+			//getData("영상처리");
 			// getData();
-			System.out.println("총 갯수 : " + number + " keyword : " + searchkeyword + " 페이지수 : " + (pageNumber - 1));
+			System.out.println("총 갯수 : " + kewordnumber + " keyword : " + searchkeyword + " 페이지수 : " + (pageNumber - 1));
 
 			// keywordCount.put(keyword, year_count);
 
 
 		}
+		
+		
 		for(int i=0;i<searchkeyword.length;i++){
 			keywordCount.put(searchkeyword[i],year_count[i]);
 			for (int j = 0; j < 6; j++) {
 				sum_count[j] += year_count[i][j];
+				kewordnumber[i]+=year_count[i][j];
 			}
 			
 		}
-	
+		
 		crdb.setKeywordPerYear(keywordCount);
 		crdb.setPaperPerYear(sum_count);
 		for (int s : sum_count) {
@@ -77,9 +82,23 @@ public class source {
 			System.out.println("each year sum paper : " + s);
 
 		}
+		for (int s : kewordnumber) {
+
+			System.out.println("each keyword sum paper : " + s);
+
+		}
+		
 		// System.out.println("keyword Count 2011:
 		// "+keywordCount.get("영상처리")[0]);
-
+		System.out.println("year_count");
+		for(int i=0;i<searchkeyword.length;i++){
+			keywordCount.put(searchkeyword[i],year_count[i]);
+			for (int j = 0; j < 6; j++) {
+				System.out.print(" "+ year_count[i][j]);
+			}
+			System.out.println();
+		}
+		
 		crdb.close();
 	}
 
@@ -109,7 +128,7 @@ public class source {
 		System.out.println("Auto flush: " + cht.table.isAutoFlush());
 
 		// pageNumber(doc) page number
-		for (pageNumber = 1; pageNumber < pageNumber(doc) + 1; pageNumber++) {
+		for (pageNumber = 1; pageNumber < 1 + 1; pageNumber++) {
 
 			String url_page = searchUrl + "&pagenumber=" + pageNumber;
 			url = new URL(url_page);
@@ -160,7 +179,7 @@ public class source {
 		System.out.println("item  : " + itemNodeList.getLength());
 
 		for (int i = 0; i < itemNodeList.getLength(); i++) {
-
+			
 			paperInfo paper = new paperInfo(keyword);
 			Node itemNode = itemNodeList.item(i);
 			if (itemNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -299,9 +318,9 @@ public class source {
 
 				// 이부분 인용수
 				cht.insertPaperCitationInfo(paper.linkURL, "nCitation", "Citation_year");
-
+				
 			}
-			number++;
+		
 			// System.out.println("Author Size: " + paper.author.size());
 
 		}

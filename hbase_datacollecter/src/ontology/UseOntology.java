@@ -50,14 +50,23 @@ public class UseOntology {
 
 				} else if (so.SearchKeyWord(s) == null && n == wordlist.size()) {
 					//System.out.println("n : " + n);
-					resultKeywords.add(keyword);
+					
+					if(resultKeywords.contains(so.SearchKeyWord(s))){
+						resultKeywords.add(keyword);
+					}
+					
 				} else if (so.SearchKeyWord(s) != null) {
 					resultKeywords.add(so.SearchKeyWord(s));
 				}
 				n++;
 			}
 		}
-
+		
+		for(String s:resultKeywords){
+			
+			System.out.println(s);
+		}
+		
 		return resultKeywords;
 
 	}
