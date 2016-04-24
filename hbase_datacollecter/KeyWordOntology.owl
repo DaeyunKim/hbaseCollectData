@@ -15,11 +15,13 @@
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#ARTIFICIAL">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="http://netdb/#인공진능"/>
+      <owl:Class rdf:about="http://netdb/#인공지능"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#인공지능형">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#인공지능"/>
+    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#UML">
     <rdfs:subClassOf>
@@ -90,7 +92,9 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#NETWORK">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#인공지능"/>
+    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:about="http://netdb/#네트워크"/>
     </rdfs:subClassOf>
@@ -150,7 +154,9 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#신경회로망">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://netdb/#인공지능"/>
+    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:about="http://netdb/#영상처리"/>
     </rdfs:subClassOf>
@@ -161,7 +167,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#인공지능">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#MOBILE">
     <rdfs:subClassOf>
@@ -199,7 +205,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#FUZZY">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#ONTOLOGY">
     <rdfs:subClassOf>
@@ -222,7 +228,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#INTELLIGENCE">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#TCPIP">
     <rdfs:subClassOf>
@@ -240,7 +246,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#지능형">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#프로그램">
     <rdfs:subClassOf>
@@ -329,7 +335,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#신경망">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#보안운영체제">
     <rdfs:subClassOf>
@@ -385,10 +391,10 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#지능">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#RECOGNITION">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#파이썬">
     <rdfs:subClassOf>
@@ -528,7 +534,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#인공신경망">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#정보보안">
     <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
@@ -704,7 +710,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#신경">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#홉">
     <rdfs:subClassOf>
@@ -712,7 +718,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#인식">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#소프트웨어">
     <rdfs:subClassOf>
@@ -773,7 +779,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#인공지능기법">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#보안관리">
     <rdfs:subClassOf rdf:resource="http://netdb/#정보보안"/>
@@ -837,7 +843,7 @@
     <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#퍼지">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#PYTHON">
     <rdfs:subClassOf>
@@ -912,7 +918,7 @@
     <rdfs:subClassOf rdf:resource="http://netdb/#프로그래밍언어"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#강화학습">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#MAP">
     <rdfs:subClassOf rdf:resource="http://netdb/#빅데이터"/>
@@ -1005,7 +1011,7 @@
     <rdfs:subClassOf rdf:resource="http://netdb/#영상처리"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#NEURAL">
-    <rdfs:subClassOf rdf:resource="http://netdb/#인공진능"/>
+    <rdfs:subClassOf rdf:resource="http://netdb/#인공지능"/>
   </owl:Class>
   <owl:Class rdf:about="http://netdb/#한글">
     <rdfs:subClassOf>

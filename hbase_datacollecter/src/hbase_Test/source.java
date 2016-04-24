@@ -40,7 +40,7 @@ public class source {
 	Calendar today = Calendar.getInstance();
 	int today_year = today.get(Calendar.YEAR);
 	UseOntology uo = new UseOntology();// ontology keywords
-	String searchkeyword[] = { "영상처리", "인공능", "자연어처리", "소셜", "빅데이터", "네트워크", "정보보안", "데이터베이스", "센서", "온톨로지", "클라우드",
+	String searchkeyword[] = { "영상처리", "인공지능", "자연어처리", "소셜", "빅데이터", "네트워크", "정보보안", "데이터베이스", "센서", "온톨로지", "클라우드",
 			"프로그래밍언어" };
 	HashMap<String, int[]> keywordCount = new HashMap<String, int[]>();
 	// keyword,year,count
@@ -56,8 +56,8 @@ public class source {
 		for (int i = 0; i < searchkeyword.length; i++) {
 			
 			getData(searchkeyword[i]);
-			//getData("영상처리");
-			// getData();
+			//getData("인공지능");
+			
 			System.out.println("총 갯수 : " + kewordnumber + " keyword : " + searchkeyword + " 페이지수 : " + (pageNumber - 1));
 
 			// keywordCount.put(keyword, year_count);
@@ -128,7 +128,7 @@ public class source {
 		System.out.println("Auto flush: " + cht.table.isAutoFlush());
 
 		// pageNumber(doc) page number
-		for (pageNumber = 1; pageNumber < 1 + 1; pageNumber++) {
+		for (pageNumber = 1; pageNumber < pageNumber(doc) + 1; pageNumber++) {
 
 			String url_page = searchUrl + "&pagenumber=" + pageNumber;
 			url = new URL(url_page);

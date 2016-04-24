@@ -67,6 +67,11 @@ public class UseOntology {
 			System.out.println(s);
 		}
 		
+		
+		
+		if(resultKeywords.size()==0){
+			resultKeywords.add(keyword);
+		}
 		return resultKeywords;
 
 	}
