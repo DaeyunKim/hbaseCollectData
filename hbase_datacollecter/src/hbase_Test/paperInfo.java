@@ -20,6 +20,10 @@ public	ArrayList<String> paper_keyword = new ArrayList<String>();
 	public paperInfo(String category){
 		this.category=category;
 	}
+	
+	public paperInfo(){
+		
+	}
 	String callAuthor(){
 		String str = "";
 		

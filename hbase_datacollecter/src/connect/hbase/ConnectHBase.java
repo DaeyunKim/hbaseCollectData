@@ -377,47 +377,58 @@ public class ConnectHBase {
 		ArrayList<paperInfo> authorsPaperInfo = new ArrayList<paperInfo>();//paperurl(MD5)
 		paperInfo pi;
 		for (String s : gets) {
-
+			pi = new paperInfo();
 			Get g = new Get(Bytes.toBytes(s));
 			g.addFamily(Bytes.toBytes("paper_info"));
 			g.addFamily(Bytes.toBytes("issue_info"));
 			g.addFamily(Bytes.toBytes("issue_info"));
 			g.addFamily(Bytes.toBytes("url"));
 			g.addFamily(Bytes.toBytes("keyword"));
-
+			
 			Result r = table.get(g);
 			byte[] b = r.getValue(Bytes.toBytes("paper_info"), Bytes.toBytes("title"));
 			String title = Bytes.toString(b);
-			System.out.println("title : " + title);
-			pi = new paperInfo(title);
+		//	System.out.println("title : " + title);
+			
 			// later check
 		//	b = r.getValue(Bytes.toBytes("paper_info"), Bytes.toBytes("nAuthor"));// 숫자
 			
+			pi.title = title;
+			System.out.println("paper title : "+pi.title);
 			b = r.getValue(Bytes.toBytes("paper_info"), Bytes.toBytes("Author_names"));// 저자 이름
 
 			String[] values = Bytes.toString(b).split(";");
+			System.out.print("authors name : ");
 			for(String names:values){
 				
 				pi.each_author.add(names);
+				System.out.print(names+" ");
 				
 			}
 			
 			b = r.getValue(Bytes.toBytes("issue_info"), Bytes.toBytes("issue_number"));// 페이지수
 			pi.Issue_number = Bytes.toString(b);
+			System.out.println("paper Issue_number: "+pi.Issue_number);
 			b = r.getValue(Bytes.toBytes("issue_info"), Bytes.toBytes("issue_date"));// 페이지수
 			pi.Issue_date = Bytes.toString(b);
+			System.out.println("paper Issue_date: "+pi.Issue_date);
 			b = r.getValue(Bytes.toBytes("issue_info"), Bytes.toBytes("issue_name"));// 학회
 																						// 이름
 			pi.Issue_name = Bytes.toString(b);
+			System.out.println("paper Issue_name: "+pi.Issue_name);
 			b = r.getValue(Bytes.toBytes("issue_info"), Bytes.toBytes("publisher_name"));// 학회
 																							// 이름
 			pi.publisher_name = Bytes.toString(b);
+			System.out.println("paper publisher_name : "+pi.publisher_name);
 			b = r.getValue(Bytes.toBytes("url"), Bytes.toBytes("authorURL"));// 저자URL
 
 			b = r.getValue(Bytes.toBytes("url"), Bytes.toBytes("paperURL"));// paperURL
 			pi.linkURL = Bytes.toString(b);
+			System.out.println("paper linkURL : "+pi.linkURL);
 			b = r.getValue(Bytes.toBytes("url"), Bytes.toBytes("publisherURL"));// 저자URL
+			
 			pi.publisher_url = Bytes.toString(b);
+			System.out.println("paper publisher_url : "+pi.publisher_url);
 			authorsPaperInfo.add(pi);
 		}
 		
