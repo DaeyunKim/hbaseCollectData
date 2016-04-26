@@ -39,7 +39,7 @@ public class UseOntology {
 		// 키워드 추출하는 함수
 		// System.out.println("키워드 추출하는 함수");
 
-		System.out.println("wordlist.size() : " + wordlist.size());
+	//	System.out.println("wordlist.size() : " + wordlist.size());
 		if (wordlist.size() != 0) {
 			int n = 1;
 			for (String s : wordlist) {

@@ -258,7 +258,9 @@ public class source {
 				// samlpe input context=> keyword
 
 				for (int q = 0; q < temp_keyword.size(); q++) {
-
+					System.out.println("paper keyword number : "+temp_keyword.get(q));
+					System.out.println("insertKeywordInfo :  "+temp_keyword.get(q) + "_" + timestamp());
+					
 					cht.insertKeywordInfo(temp_keyword.get(q) + "_" + timestamp(), paper.linkURL);
 
 				}
@@ -279,19 +281,22 @@ public class source {
 				// calculate P_SCORE
 				String hyear = paper.Issue_date.substring(0, 4).trim();
 				int hyear_i = Integer.parseInt(hyear);// paper Year
-				System.out.println("paper IssueDate : " + hyear + " currentYear : " + today_year);
+		//		System.out.println("paper IssueDate : " + hyear + " currentYear : " + today_year);
 				int n_diff = today_year - hyear_i;
 				float score = (float) (1 / (Math.log(2 + n_diff)));
 				// year_count[keyword][year]
 				
 				
 				for (int k = 0; k < keywords.size(); k++) {
+					System.out.println("==cycle paper keyword size!!==  "+k);
 					int keyword_number=0;
 					for(int z=0;z<searchkeyword.length;z++){
-						if(keywords.get(0).equals(searchkeyword[z])){
+						if(keywords.get(k).equals(searchkeyword[z])){
 							keyword_number=z;
+							
 						}
 					}
+					System.out.println("keywords.get(k));"+keywords.get(k)+"searchkeyword[z] : "+searchkeyword[keyword_number]);
 					switch (hyear_i) {
 					case 2011:
 						year_count[keyword_number][0]++;
@@ -546,13 +551,9 @@ public class source {
 
 	// time
 	public String timestamp() {
-		String time;
-		Calendar calendar = Calendar.getInstance();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
-
-		time = dateFormat.format(calendar.getTime());
-
-		return time;
+			
+		
+		return String.valueOf(System.currentTimeMillis());
 	}
 
 }

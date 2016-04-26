@@ -79,7 +79,7 @@ public class ConnectRDB {
 	}
 	
 	
-	private int getXNum(String s, String table)
+	public int getXNum(String s, String table)
 	{
 		try {
 			String squery = "select num from " + table + " where name = ?";

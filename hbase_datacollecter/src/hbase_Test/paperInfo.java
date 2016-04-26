@@ -5,16 +5,16 @@ import java.util.ArrayList;
 public class paperInfo {
 
 	String category=""; //카테고리
-	String title=""; //제목
+	public String title=""; //제목
 	public ArrayList<Author> author = new ArrayList<Author>();//저자정보
 	
-	String publisher_url="null"; // 학회 정보 url
-	String publisher_name="null"; // 학회 이름
-	String Issue_date="null"; //논문 발표 날짜
-	String linkURL="null"; //논문 URL
-	String Issue_name="null"; 
-	String Issue_number="0";
-	ArrayList<String> each_author = new ArrayList<String>();
+	public String publisher_url="null"; // 학회 정보 url
+	public String publisher_name="null"; // 학회 이름
+	public String Issue_date="null"; //논문 발표 날짜
+	public String linkURL="null"; //논문 URL
+	public String Issue_name="null"; 
+	public String Issue_number="0";
+	public ArrayList<String> each_author = new ArrayList<String>();
 public	ArrayList<String> paper_keyword = new ArrayList<String>();
 
 	public paperInfo(String category){
